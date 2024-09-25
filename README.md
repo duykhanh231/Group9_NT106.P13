@@ -1,1 +1,1 @@
-# Group9_NT106.P13
+# Battle Ship Game - Basic Network Programming Project
