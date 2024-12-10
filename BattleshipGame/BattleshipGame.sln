@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleshipGame", "BattleshipGame\BattleshipGame.csproj", "{F7692A7E-D973-433D-B310-0AE34CD2EDDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindOpponent_NotificationWindow", "FindOpponentWindow\FindOpponent_NotificationWindow.csproj", "{086368BB-7A54-459E-BB52-74DCE2DE519B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F7692A7E-D973-433D-B310-0AE34CD2EDDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7692A7E-D973-433D-B310-0AE34CD2EDDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7692A7E-D973-433D-B310-0AE34CD2EDDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{086368BB-7A54-459E-BB52-74DCE2DE519B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086368BB-7A54-459E-BB52-74DCE2DE519B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086368BB-7A54-459E-BB52-74DCE2DE519B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086368BB-7A54-459E-BB52-74DCE2DE519B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

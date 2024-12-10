@@ -1,0 +1,26 @@
+﻿<Window x:Class="FindOpponent_NotificationWindow.View.NotificationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Thông Báo" Height="300" Width="500">
+    <Grid>
+        <StackPanel MaxWidth="500" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+            <!-- Tiêu đề -->
+            <TextBlock FontSize="46" HorizontalAlignment="Center" Margin="0 0 0 30" FontWeight="ExtraBold">
+                THÔNG BÁO
+            </TextBlock>
+
+            <!-- Hiển thị thông báo -->
+            <TextBlock x:Name="NotificationMessage" 
+                       Text="[user name] yêu cầu tạo trận đấu" 
+                       HorizontalAlignment="Center" 
+                       FontSize="16" 
+                       Margin="0 0 0 30"/>
+
+            <!-- Nút Chấp Nhận và Từ Chối -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Chấp Nhận" Width="100" Margin="0 0 10 0" Click="AcceptButton_Click"/>
+                <Button Content="Từ Chối" Width="100" Click="RejectButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
