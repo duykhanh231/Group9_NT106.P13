@@ -1,4 +1,4 @@
-﻿namespace BattleshipGame
+﻿namespace Server
 {
     partial class Form1
     {
