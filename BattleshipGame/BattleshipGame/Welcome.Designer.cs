@@ -34,82 +34,107 @@
             serverIP = new Label();
             tb_serverIP = new TextBox();
             btn_connect = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // AccountName
             // 
             AccountName.AutoSize = true;
             AccountName.BackColor = Color.Transparent;
-            AccountName.Font = new Font("Snap ITC", 19.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            AccountName.ForeColor = Color.DarkGoldenrod;
-            AccountName.Location = new Point(12, 103);
+            AccountName.Font = new Font("Comic Sans MS", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AccountName.ForeColor = Color.Snow;
+            AccountName.Location = new Point(79, 162);
+            AccountName.Margin = new Padding(5, 0, 5, 0);
             AccountName.Name = "AccountName";
-            AccountName.Size = new Size(330, 44);
+            AccountName.Size = new Size(257, 74);
             AccountName.TabIndex = 0;
-            AccountName.Text = "Băng Hải Tặc : ";
+            AccountName.Text = "Moniker:";
             // 
             // tb_Accountname
             // 
             tb_Accountname.BackColor = SystemColors.ButtonFace;
             tb_Accountname.BorderStyle = BorderStyle.None;
-            tb_Accountname.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_Accountname.Location = new Point(413, 96);
+            tb_Accountname.Font = new Font("Comic Sans MS", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tb_Accountname.Location = new Point(671, 154);
+            tb_Accountname.Margin = new Padding(5);
             tb_Accountname.Multiline = true;
             tb_Accountname.Name = "tb_Accountname";
-            tb_Accountname.Size = new Size(327, 51);
+            tb_Accountname.Size = new Size(531, 82);
             tb_Accountname.TabIndex = 1;
             // 
             // serverIP
             // 
             serverIP.AutoSize = true;
             serverIP.BackColor = Color.Transparent;
-            serverIP.Font = new Font("Snap ITC", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            serverIP.ForeColor = Color.DarkGoldenrod;
-            serverIP.Location = new Point(12, 184);
+            serverIP.Font = new Font("Comic Sans MS", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            serverIP.ForeColor = Color.Snow;
+            serverIP.Location = new Point(79, 291);
+            serverIP.Margin = new Padding(5, 0, 5, 0);
             serverIP.Name = "serverIP";
-            serverIP.Size = new Size(386, 36);
+            serverIP.Size = new Size(331, 74);
             serverIP.TabIndex = 2;
-            serverIP.Text = "Tọa Độ ( ServerIP ) : ";
+            serverIP.Text = "Server IP: ";
             // 
             // tb_serverIP
             // 
             tb_serverIP.BackColor = SystemColors.ButtonFace;
             tb_serverIP.BorderStyle = BorderStyle.None;
-            tb_serverIP.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_serverIP.Location = new Point(413, 172);
+            tb_serverIP.Font = new Font("Comic Sans MS", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tb_serverIP.Location = new Point(671, 275);
+            tb_serverIP.Margin = new Padding(5);
             tb_serverIP.Multiline = true;
             tb_serverIP.Name = "tb_serverIP";
-            tb_serverIP.Size = new Size(327, 48);
+            tb_serverIP.Size = new Size(531, 77);
             tb_serverIP.TabIndex = 3;
             // 
             // btn_connect
             // 
-            btn_connect.BackColor = SystemColors.ActiveCaption;
-            btn_connect.Font = new Font("Snap ITC", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            btn_connect.Location = new Point(107, 298);
+            btn_connect.BackColor = Color.SteelBlue;
+            btn_connect.FlatStyle = FlatStyle.Flat;
+            btn_connect.Font = new Font("Comic Sans MS", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_connect.ForeColor = Color.Snow;
+            btn_connect.Location = new Point(671, 503);
+            btn_connect.Margin = new Padding(5);
             btn_connect.Name = "btn_connect";
-            btn_connect.Size = new Size(159, 68);
+            btn_connect.Size = new Size(258, 109);
             btn_connect.TabIndex = 4;
-            btn_connect.Text = "Let Go";
+            btn_connect.Text = "Let Go!";
             btn_connect.UseVisualStyleBackColor = false;
             btn_connect.Click += btn_connect_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = SystemColors.Control;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(2189, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(59, 61);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // Welcome
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1391, 766);
+            ClientSize = new Size(2260, 1226);
+            Controls.Add(pictureBox1);
             Controls.Add(btn_connect);
             Controls.Add(tb_serverIP);
             Controls.Add(serverIP);
             Controls.Add(tb_Accountname);
             Controls.Add(AccountName);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(5);
             Name = "Welcome";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Welcome";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,5 +146,6 @@
         private Label serverIP;
         private TextBox tb_serverIP;
         private Button btn_connect;
+        private PictureBox pictureBox1;
     }
 }

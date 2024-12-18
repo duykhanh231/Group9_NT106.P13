@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BattleshipGame
+namespace Client
 {
-    public partial class Form2 : Form
+    public partial class SearchEnemy : Form
     {
-        public Form2()
+        public SearchEnemy()
         {
             InitializeComponent();
         }
