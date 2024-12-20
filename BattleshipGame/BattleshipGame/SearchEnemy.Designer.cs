@@ -30,10 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchEnemy));
             pictureBox1 = new PictureBox();
-            dataGridView1 = new DataGridView();
-            Enemy = new DataGridViewTextBoxColumn();
+            listView1 = new ListView();
+            panel1 = new Panel();
+            lblEnemy = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -47,26 +48,38 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
-            // dataGridView1
+            // listView1
             // 
-            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
-            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Enemy });
-            dataGridView1.Location = new Point(463, 267);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 82;
-            dataGridView1.Size = new Size(1137, 680);
-            dataGridView1.TabIndex = 7;
+            listView1.BackColor = SystemColors.ActiveCaption;
+            listView1.Font = new Font("Comic Sans MS", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            listView1.ForeColor = Color.White;
+            listView1.Location = new Point(194, 312);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(1864, 833);
+            listView1.TabIndex = 7;
+            listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // Enemy
+            // panel1
             // 
-            Enemy.HeaderText = "Enemy";
-            Enemy.MinimumWidth = 10;
-            Enemy.Name = "Enemy";
-            Enemy.Width = 200;
+            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(lblEnemy);
+            panel1.Location = new Point(194, 211);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1864, 119);
+            panel1.TabIndex = 8;
+            // 
+            // lblEnemy
+            // 
+            lblEnemy.AutoSize = true;
+            lblEnemy.Font = new Font("Comic Sans MS", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblEnemy.ForeColor = Color.White;
+            lblEnemy.Location = new Point(676, 24);
+            lblEnemy.Name = "lblEnemy";
+            lblEnemy.Size = new Size(559, 74);
+            lblEnemy.TabIndex = 0;
+            lblEnemy.Text = "FIND YOUR ENEMY";
             // 
             // SearchEnemy
             // 
@@ -75,20 +88,23 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(2260, 1226);
-            Controls.Add(dataGridView1);
+            Controls.Add(panel1);
+            Controls.Add(listView1);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "SearchEnemy";
             Text = "Search Enemy";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private PictureBox pictureBox1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Enemy;
+        private ListView listView1;
+        private Panel panel1;
+        private Label lblEnemy;
     }
 }

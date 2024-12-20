@@ -61,5 +61,10 @@ namespace BattleshipGame
                 MessageBox.Show("Error connecting to server: " + ex.Message);
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Client
 {
-    public partial class SearchEnemy : Form
+    public partial class OfferingGame : Form
     {
-        public SearchEnemy()
+        public OfferingGame()
         {
             InitializeComponent();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

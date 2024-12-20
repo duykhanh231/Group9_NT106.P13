@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Setup));
             pnlMatsSet = new Panel();
             label7 = new Label();
             label6 = new Label();
@@ -73,10 +72,8 @@
             button21 = new Button();
             button20 = new Button();
             btnPlay = new Button();
-            pictureBox1 = new PictureBox();
             pnlMatsSet.SuspendLayout();
             pnlMast.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pnlMatsSet
@@ -550,7 +547,7 @@
             // 
             btnPlay.BackColor = Color.Tomato;
             btnPlay.FlatStyle = FlatStyle.Flat;
-            btnPlay.Font = new Font("Circle", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPlay.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPlay.ForeColor = Color.White;
             btnPlay.Location = new Point(1505, 1022);
             btnPlay.Name = "btnPlay";
@@ -559,23 +556,12 @@
             btnPlay.Text = "PLAY";
             btnPlay.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(2, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1718, 437);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            // 
             // Setup
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1721, 1123);
-            Controls.Add(pictureBox1);
             Controls.Add(btnPlay);
             Controls.Add(pnlMast);
             Controls.Add(pnlMatsSet);
@@ -585,7 +571,6 @@
             pnlMatsSet.PerformLayout();
             pnlMast.ResumeLayout(false);
             pnlMast.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -594,7 +579,6 @@
         private Panel pnlMatsSet;
         private Panel pnlMast;
         private Button btnPlay;
-        private PictureBox pictureBox1;
         private Button button4;
         private Button button3;
         private Button button2;
