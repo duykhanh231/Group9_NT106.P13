@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OfferingGame));
             lblGameRequest = new Label();
-            lblRequester = new Label();
             pictureBox1 = new PictureBox();
             accept = new Button();
             decline = new Button();
             pictureBox2 = new PictureBox();
+            enemies = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -50,18 +50,6 @@
             lblGameRequest.Size = new Size(480, 41);
             lblGameRequest.TabIndex = 0;
             lblGameRequest.Text = "You have a game request from:";
-            // 
-            // lblRequester
-            // 
-            lblRequester.AutoSize = true;
-            lblRequester.Font = new Font("Comic Sans MS", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRequester.ForeColor = Color.White;
-            lblRequester.Location = new Point(510, 161);
-            lblRequester.Margin = new Padding(2, 0, 2, 0);
-            lblRequester.Name = "lblRequester";
-            lblRequester.Size = new Size(197, 41);
-            lblRequester.TabIndex = 1;
-            lblRequester.Text = "lblRequester";
             // 
             // pictureBox1
             // 
@@ -116,6 +104,14 @@
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
             // 
+            // enemies
+            // 
+            enemies.FormattingEnabled = true;
+            enemies.Location = new Point(511, 174);
+            enemies.Name = "enemies";
+            enemies.Size = new Size(207, 28);
+            enemies.TabIndex = 8;
+            // 
             // OfferingGame
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -123,11 +119,11 @@
             BackColor = Color.SteelBlue;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(730, 418);
+            Controls.Add(enemies);
             Controls.Add(pictureBox2);
             Controls.Add(decline);
             Controls.Add(accept);
             Controls.Add(pictureBox1);
-            Controls.Add(lblRequester);
             Controls.Add(lblGameRequest);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
@@ -143,10 +139,10 @@
         #endregion
 
         private Label lblGameRequest;
-        private Label lblRequester;
         private PictureBox pictureBox1;
         private Button accept;
         private Button decline;
         private PictureBox pictureBox2;
+        private ComboBox enemies;
     }
 }

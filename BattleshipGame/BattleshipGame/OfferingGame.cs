@@ -25,15 +25,15 @@ namespace Client
 
         private void accept_Click(object sender, EventArgs e)
         {
-            if (CBEneNicks.Text == "")
+            if (enemies.Text == "")
             {
                 MessageBox.Show("You must select enemy or click No", "Error!");
             }
             else
             {
                 //Get recipient ID from Combobox
-                Program.enemySelect.enemyNick = CBEneNicks.SelectedValue.ToString();
-                Program.enemyNick = CBEneNicks.SelectedValue.ToString();
+                Program.enemySelect.enemyNick = enemies.SelectedValue.ToString();
+                Program.enemyNick = enemies.SelectedValue.ToString();
                 DialogResult = DialogResult.Yes;
             }
         }
@@ -48,9 +48,9 @@ namespace Client
             eNicks.RemoveAt(eNicks.Count() - 1); //EOF
             eNicks.RemoveAt(0);//communique value
 
-            CBEneNicks.DataSource = eNicks;
-            CBEneNicks.AutoCompleteMode = AutoCompleteMode.Append;
-            CBEneNicks.AutoCompleteSource = AutoCompleteSource.ListItems;
+            enemies.DataSource = eNicks;
+            enemies.AutoCompleteMode = AutoCompleteMode.Append;
+            enemies.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
     }
 }

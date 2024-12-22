@@ -16,6 +16,13 @@ namespace BattleshipGame
 
         }
 
+        public Setup(string enemyNick)
+        {
+            InitializeComponent();
+            DoubleBuffered = true;
+            this.enemyNick = enemyNick;
+        }
+
         public bool[,] yourMap = new bool[10, 10];
         public bool[,] yourMapTmp = new bool[10, 10];
         public bool[,] enemyMap = new bool[10, 10];
