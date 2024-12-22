@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BattleshipGame;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,44 @@ namespace Client
 {
     public partial class OfferingGame : Form
     {
-        public OfferingGame()
+        string enemiesNicks;
+        public OfferingGame(string enemiesNicks)
         {
             InitializeComponent();
+            DialogResult = DialogResult.No;
+            this.enemiesNicks = enemiesNicks;
+        }
+
+        
+
+        private void accept_Click(object sender, EventArgs e)
+        {
+            if (CBEneNicks.Text == "")
+            {
+                MessageBox.Show("You must select enemy or click No", "Error!");
+            }
+            else
+            {
+                //Get recipient ID from Combobox
+                Program.enemySelect.enemyNick = CBEneNicks.SelectedValue.ToString();
+                Program.enemyNick = CBEneNicks.SelectedValue.ToString();
+                DialogResult = DialogResult.Yes;
+            }
+        }
+
+        private void Decline_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.No;
+        }
+        private void OfferingGame_Load(object sender, EventArgs e)
+        {
+            List<string> eNicks = enemiesNicks.Split(' ').ToList();
+            eNicks.RemoveAt(eNicks.Count() - 1); //EOF
+            eNicks.RemoveAt(0);//communique value
+
+            CBEneNicks.DataSource = eNicks;
+            CBEneNicks.AutoCompleteMode = AutoCompleteMode.Append;
+            CBEneNicks.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
     }
 }
