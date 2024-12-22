@@ -73,7 +73,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.LightSeaGreen;
+            button1.BackColor = Color.MediumSeaGreen;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
