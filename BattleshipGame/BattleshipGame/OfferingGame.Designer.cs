@@ -99,7 +99,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = SystemColors.ActiveCaption;
+            pictureBox2.BackColor = Color.SteelBlue;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(1116, 12);
             pictureBox2.Name = "pictureBox2";
@@ -112,7 +112,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.SteelBlue;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1187, 669);
             Controls.Add(pictureBox2);

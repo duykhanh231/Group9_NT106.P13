@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Setup));
             pnlMatsSet = new Panel();
             label7 = new Label();
             label6 = new Label();
@@ -72,8 +73,16 @@
             button21 = new Button();
             button20 = new Button();
             btnPlay = new Button();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            label12 = new Label();
+            label13 = new Label();
             pnlMatsSet.SuspendLayout();
             pnlMast.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // pnlMatsSet
@@ -113,6 +122,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Circle", 9F);
+            label7.ForeColor = Color.White;
             label7.Location = new Point(380, 484);
             label7.Name = "label7";
             label7.Size = new Size(52, 39);
@@ -123,6 +133,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Circle", 9F);
+            label6.ForeColor = Color.White;
             label6.Location = new Point(380, 304);
             label6.Name = "label6";
             label6.Size = new Size(52, 39);
@@ -133,6 +144,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Circle", 9F);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(380, 160);
             label5.Name = "label5";
             label5.Size = new Size(52, 39);
@@ -143,6 +155,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Circle", 9F);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(380, 27);
             label4.Name = "label4";
             label4.Size = new Size(52, 39);
@@ -153,6 +166,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Circle", 9F);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(223, 484);
             label3.Name = "label3";
             label3.Size = new Size(45, 39);
@@ -163,6 +177,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Circle", 9F);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(223, 304);
             label2.Name = "label2";
             label2.Size = new Size(45, 39);
@@ -173,6 +188,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Circle", 9F);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(223, 154);
             label1.Name = "label1";
             label1.Size = new Size(45, 39);
@@ -181,7 +197,7 @@
             // 
             // button9
             // 
-            button9.BackColor = Color.DodgerBlue;
+            button9.BackColor = Color.Cornsilk;
             button9.FlatStyle = FlatStyle.Flat;
             button9.Location = new Point(326, 472);
             button9.Name = "button9";
@@ -191,7 +207,7 @@
             // 
             // button19
             // 
-            button19.BackColor = Color.DodgerBlue;
+            button19.BackColor = Color.Cornsilk;
             button19.FlatStyle = FlatStyle.Flat;
             button19.Location = new Point(326, 182);
             button19.Name = "button19";
@@ -201,7 +217,7 @@
             // 
             // button15
             // 
-            button15.BackColor = Color.DodgerBlue;
+            button15.BackColor = Color.Cornsilk;
             button15.FlatStyle = FlatStyle.Flat;
             button15.Location = new Point(326, 313);
             button15.Name = "button15";
@@ -211,7 +227,7 @@
             // 
             // button18
             // 
-            button18.BackColor = Color.DodgerBlue;
+            button18.BackColor = Color.Cornsilk;
             button18.FlatStyle = FlatStyle.Flat;
             button18.Location = new Point(67, 490);
             button18.Name = "button18";
@@ -221,7 +237,7 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.DodgerBlue;
+            button3.BackColor = Color.Cornsilk;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Location = new Point(28, 490);
             button3.Name = "button3";
@@ -231,7 +247,7 @@
             // 
             // button16
             // 
-            button16.BackColor = Color.DodgerBlue;
+            button16.BackColor = Color.Cornsilk;
             button16.FlatStyle = FlatStyle.Flat;
             button16.Location = new Point(326, 550);
             button16.Name = "button16";
@@ -241,7 +257,7 @@
             // 
             // button4
             // 
-            button4.BackColor = Color.DodgerBlue;
+            button4.BackColor = Color.Cornsilk;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Location = new Point(107, 490);
             button4.Name = "button4";
@@ -251,7 +267,7 @@
             // 
             // button17
             // 
-            button17.BackColor = Color.DodgerBlue;
+            button17.BackColor = Color.Cornsilk;
             button17.FlatStyle = FlatStyle.Flat;
             button17.Location = new Point(326, 33);
             button17.Name = "button17";
@@ -261,7 +277,7 @@
             // 
             // button14
             // 
-            button14.BackColor = Color.DodgerBlue;
+            button14.BackColor = Color.Cornsilk;
             button14.FlatStyle = FlatStyle.Flat;
             button14.Location = new Point(326, 511);
             button14.Name = "button14";
@@ -271,7 +287,7 @@
             // 
             // button13
             // 
-            button13.BackColor = Color.DodgerBlue;
+            button13.BackColor = Color.Cornsilk;
             button13.FlatStyle = FlatStyle.Flat;
             button13.Location = new Point(146, 160);
             button13.Name = "button13";
@@ -281,7 +297,7 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.DodgerBlue;
+            button2.BackColor = Color.Cornsilk;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Location = new Point(107, 160);
             button2.Name = "button2";
@@ -291,7 +307,7 @@
             // 
             // button12
             // 
-            button12.BackColor = Color.DodgerBlue;
+            button12.BackColor = Color.Cornsilk;
             button12.FlatStyle = FlatStyle.Flat;
             button12.Location = new Point(146, 490);
             button12.Name = "button12";
@@ -301,7 +317,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.DodgerBlue;
+            button1.BackColor = Color.Cornsilk;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(326, 433);
             button1.Name = "button1";
@@ -311,7 +327,7 @@
             // 
             // button11
             // 
-            button11.BackColor = Color.DodgerBlue;
+            button11.BackColor = Color.Cornsilk;
             button11.FlatStyle = FlatStyle.Flat;
             button11.Location = new Point(146, 313);
             button11.Name = "button11";
@@ -321,7 +337,7 @@
             // 
             // button5
             // 
-            button5.BackColor = Color.DodgerBlue;
+            button5.BackColor = Color.Cornsilk;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Location = new Point(326, 143);
             button5.Name = "button5";
@@ -331,7 +347,7 @@
             // 
             // button10
             // 
-            button10.BackColor = Color.DodgerBlue;
+            button10.BackColor = Color.Cornsilk;
             button10.FlatStyle = FlatStyle.Flat;
             button10.Location = new Point(67, 313);
             button10.Name = "button10";
@@ -341,7 +357,7 @@
             // 
             // button6
             // 
-            button6.BackColor = Color.DodgerBlue;
+            button6.BackColor = Color.Cornsilk;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Location = new Point(326, 352);
             button6.Name = "button6";
@@ -351,7 +367,7 @@
             // 
             // button7
             // 
-            button7.BackColor = Color.DodgerBlue;
+            button7.BackColor = Color.Cornsilk;
             button7.FlatStyle = FlatStyle.Flat;
             button7.Location = new Point(107, 313);
             button7.Name = "button7";
@@ -361,7 +377,7 @@
             // 
             // button8
             // 
-            button8.BackColor = Color.DodgerBlue;
+            button8.BackColor = Color.Cornsilk;
             button8.FlatStyle = FlatStyle.Flat;
             button8.Location = new Point(326, 274);
             button8.Name = "button8";
@@ -386,7 +402,7 @@
             pnlMast.Controls.Add(button22);
             pnlMast.Controls.Add(button21);
             pnlMast.Controls.Add(button20);
-            pnlMast.Location = new Point(872, 485);
+            pnlMast.Location = new Point(1348, 483);
             pnlMast.Name = "pnlMast";
             pnlMast.Size = new Size(402, 572);
             pnlMast.TabIndex = 1;
@@ -395,6 +411,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Circle", 9F);
+            label11.ForeColor = Color.White;
             label11.Location = new Point(335, 471);
             label11.Name = "label11";
             label11.Size = new Size(52, 39);
@@ -405,6 +422,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Circle", 9F);
+            label10.ForeColor = Color.White;
             label10.Location = new Point(335, 291);
             label10.Name = "label10";
             label10.Size = new Size(52, 39);
@@ -415,6 +433,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Circle", 9F);
+            label9.ForeColor = Color.White;
             label9.Location = new Point(335, 141);
             label9.Name = "label9";
             label9.Size = new Size(52, 39);
@@ -425,6 +444,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Circle", 9F);
+            label8.ForeColor = Color.White;
             label8.Location = new Point(335, 14);
             label8.Name = "label8";
             label8.Size = new Size(52, 39);
@@ -433,7 +453,7 @@
             // 
             // button30
             // 
-            button30.BackColor = Color.DodgerBlue;
+            button30.BackColor = Color.Cornsilk;
             button30.FlatStyle = FlatStyle.Flat;
             button30.Location = new Point(280, 20);
             button30.Name = "button30";
@@ -443,7 +463,7 @@
             // 
             // button29
             // 
-            button29.BackColor = Color.DodgerBlue;
+            button29.BackColor = Color.Cornsilk;
             button29.FlatStyle = FlatStyle.Flat;
             button29.Location = new Point(280, 169);
             button29.Name = "button29";
@@ -453,7 +473,7 @@
             // 
             // button28
             // 
-            button28.BackColor = Color.DodgerBlue;
+            button28.BackColor = Color.Cornsilk;
             button28.FlatStyle = FlatStyle.Flat;
             button28.Location = new Point(280, 420);
             button28.Name = "button28";
@@ -463,7 +483,7 @@
             // 
             // button27
             // 
-            button27.BackColor = Color.DodgerBlue;
+            button27.BackColor = Color.Cornsilk;
             button27.FlatStyle = FlatStyle.Flat;
             button27.Location = new Point(280, 459);
             button27.Name = "button27";
@@ -473,7 +493,7 @@
             // 
             // button26
             // 
-            button26.BackColor = Color.DodgerBlue;
+            button26.BackColor = Color.Cornsilk;
             button26.FlatStyle = FlatStyle.Flat;
             button26.Location = new Point(280, 498);
             button26.Name = "button26";
@@ -494,7 +514,7 @@
             // 
             // button24
             // 
-            button24.BackColor = Color.DodgerBlue;
+            button24.BackColor = Color.Cornsilk;
             button24.FlatStyle = FlatStyle.Flat;
             button24.Location = new Point(280, 537);
             button24.Name = "button24";
@@ -504,7 +524,7 @@
             // 
             // button23
             // 
-            button23.BackColor = Color.DodgerBlue;
+            button23.BackColor = Color.Cornsilk;
             button23.FlatStyle = FlatStyle.Flat;
             button23.Location = new Point(280, 339);
             button23.Name = "button23";
@@ -514,7 +534,7 @@
             // 
             // button22
             // 
-            button22.BackColor = Color.DodgerBlue;
+            button22.BackColor = Color.Cornsilk;
             button22.FlatStyle = FlatStyle.Flat;
             button22.Location = new Point(280, 300);
             button22.Name = "button22";
@@ -524,18 +544,17 @@
             // 
             // button21
             // 
-            button21.BackColor = Color.DodgerBlue;
+            button21.BackColor = Color.Cornsilk;
             button21.FlatStyle = FlatStyle.Flat;
             button21.Location = new Point(280, 261);
             button21.Name = "button21";
             button21.Size = new Size(33, 33);
             button21.TabIndex = 1;
             button21.UseVisualStyleBackColor = false;
-            button21.Click += button21_Click;
             // 
             // button20
             // 
-            button20.BackColor = Color.DodgerBlue;
+            button20.BackColor = Color.Cornsilk;
             button20.FlatStyle = FlatStyle.Flat;
             button20.Location = new Point(280, 130);
             button20.Name = "button20";
@@ -549,29 +568,94 @@
             btnPlay.FlatStyle = FlatStyle.Flat;
             btnPlay.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPlay.ForeColor = Color.White;
-            btnPlay.Location = new Point(1505, 1022);
+            btnPlay.Location = new Point(2004, 1089);
             btnPlay.Name = "btnPlay";
-            btnPlay.Size = new Size(155, 64);
+            btnPlay.Size = new Size(172, 84);
             btnPlay.TabIndex = 2;
             btnPlay.Text = "PLAY";
             btnPlay.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.SteelBlue;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(2189, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(59, 61);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(91, 28);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(237, 175);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(1386, 28);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(170, 184);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 10;
+            pictureBox3.TabStop = false;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Comic Sans MS", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(360, 85);
+            label12.Name = "label12";
+            label12.Size = new Size(118, 60);
+            label12.TabIndex = 11;
+            label12.Text = "YOU";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Comic Sans MS", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(1601, 85);
+            label13.Name = "label13";
+            label13.Size = new Size(319, 60);
+            label13.TabIndex = 12;
+            label13.Text = "YOUR ENEMY";
             // 
             // Setup
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(1721, 1123);
+            BackColor = Color.SteelBlue;
+            ClientSize = new Size(2260, 1226);
+            Controls.Add(label13);
+            Controls.Add(label12);
+            Controls.Add(pictureBox3);
+            Controls.Add(pictureBox1);
+            Controls.Add(pictureBox2);
             Controls.Add(btnPlay);
             Controls.Add(pnlMast);
             Controls.Add(pnlMatsSet);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Setup";
             Text = "Battleship";
+            Load += Setup_Load;
             pnlMatsSet.ResumeLayout(false);
             pnlMatsSet.PerformLayout();
             pnlMast.ResumeLayout(false);
             pnlMast.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -620,5 +704,10 @@
         private Label label10;
         private Label label9;
         private Label label8;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox3;
+        private Label label12;
+        private Label label13;
     }
 }
