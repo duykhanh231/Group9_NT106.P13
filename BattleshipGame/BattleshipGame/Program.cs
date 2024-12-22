@@ -2,7 +2,7 @@ using Client;
 
 namespace BattleshipGame
 {
-    internal static class Program
+    static class Program
     {
         public static string userLogin;
         public static string serverAddress;

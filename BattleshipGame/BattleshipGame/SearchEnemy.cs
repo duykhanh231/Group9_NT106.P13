@@ -59,7 +59,7 @@ namespace Client
             Program.client.Send(message);
             //Receive answer in program;s thread          
         }
-        private void DGVAvailableEnemies_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvAvailableEnemies_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -70,7 +70,7 @@ namespace Client
                 btnConnect.Text = "Play with " + enemyNick;
             }
         }
-        private void BConnect_Click(object sender, EventArgs e)
+        private void btnConnect_Click(object sender, EventArgs e)
         {
             if (enemyNick != "")
             {
@@ -106,7 +106,7 @@ namespace Client
                 row.Visible = row.Cells[1].Value.ToString().ToLower().StartsWith(txtSearchEnemies.Text.ToLower());//receiver
             }
         }
-        private void EnemySelectionPanel_Load(object sender, EventArgs e)
+        private void SearchEnemy_Load(object sender, EventArgs e)
         {
             dgvAvailableEnemies.ClearSelection();
             SetTimer();

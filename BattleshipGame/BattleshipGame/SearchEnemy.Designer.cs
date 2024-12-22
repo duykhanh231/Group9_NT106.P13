@@ -76,12 +76,20 @@
             // 
             // dgvAvailableEnemies
             // 
+            dgvAvailableEnemies.AllowUserToAddRows = false;
+            dgvAvailableEnemies.AllowUserToDeleteRows = false;
+            dgvAvailableEnemies.AllowUserToResizeRows = false;
+            dgvAvailableEnemies.BackgroundColor = Color.SteelBlue;
+            dgvAvailableEnemies.BorderStyle = BorderStyle.Fixed3D;
             dgvAvailableEnemies.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAvailableEnemies.Location = new Point(194, 323);
+            dgvAvailableEnemies.MultiSelect = false;
             dgvAvailableEnemies.Name = "dgvAvailableEnemies";
+            dgvAvailableEnemies.ReadOnly = true;
+            dgvAvailableEnemies.RowHeadersVisible = false;
             dgvAvailableEnemies.RowHeadersWidth = 82;
             dgvAvailableEnemies.Size = new Size(1864, 740);
-            dgvAvailableEnemies.TabIndex = 9;
+            dgvAvailableEnemies.TabIndex = 7;
             // 
             // btnConnect
             // 
@@ -148,9 +156,9 @@
         private PictureBox pictureBox1;
         private Panel panel1;
         private Label lblEnemy;
-        private DataGridView dgvAvailableEnemies;
         private Button btnConnect;
         private TextBox txtSearchEnemies;
         private Label lblSearchEnemies;
+        public DataGridView dgvAvailableEnemies;
     }
 }
