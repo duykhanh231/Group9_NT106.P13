@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -60,6 +61,17 @@ namespace BattleshipGame
             {
                 MessageBox.Show("Error connecting to server: " + ex.Message);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSignup_Click(object sender, EventArgs e)
+        {
+            Signup signup = new Signup();
+            signup.ShowDialog();
         }
     }
 }

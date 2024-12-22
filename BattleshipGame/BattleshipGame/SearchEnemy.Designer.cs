@@ -30,10 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchEnemy));
             pictureBox1 = new PictureBox();
-            dataGridView1 = new DataGridView();
-            Enemy = new DataGridViewTextBoxColumn();
+            panel1 = new Panel();
+            lblEnemy = new Label();
+            dgvAvailableEnemies = new DataGridView();
+            btnConnect = new Button();
+            txtSearchEnemies = new TextBox();
+            lblSearchEnemies = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvAvailableEnemies).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -47,26 +52,81 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
-            // dataGridView1
+            // panel1
             // 
-            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
-            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Enemy });
-            dataGridView1.Location = new Point(463, 267);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 82;
-            dataGridView1.Size = new Size(1137, 680);
-            dataGridView1.TabIndex = 7;
+            panel1.BackColor = Color.SteelBlue;
+            panel1.Controls.Add(lblEnemy);
+            panel1.Location = new Point(194, 211);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1864, 119);
+            panel1.TabIndex = 8;
             // 
-            // Enemy
+            // lblEnemy
             // 
-            Enemy.HeaderText = "Enemy";
-            Enemy.MinimumWidth = 10;
-            Enemy.Name = "Enemy";
-            Enemy.Width = 200;
+            lblEnemy.AutoSize = true;
+            lblEnemy.Font = new Font("Comic Sans MS", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblEnemy.ForeColor = Color.White;
+            lblEnemy.Location = new Point(676, 24);
+            lblEnemy.Name = "lblEnemy";
+            lblEnemy.Size = new Size(559, 74);
+            lblEnemy.TabIndex = 0;
+            lblEnemy.Text = "FIND YOUR ENEMY";
+            // 
+            // dgvAvailableEnemies
+            // 
+            dgvAvailableEnemies.AllowUserToAddRows = false;
+            dgvAvailableEnemies.AllowUserToDeleteRows = false;
+            dgvAvailableEnemies.AllowUserToResizeRows = false;
+            dgvAvailableEnemies.BackgroundColor = Color.White;
+            dgvAvailableEnemies.BorderStyle = BorderStyle.Fixed3D;
+            dgvAvailableEnemies.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAvailableEnemies.Location = new Point(194, 323);
+            dgvAvailableEnemies.MultiSelect = false;
+            dgvAvailableEnemies.Name = "dgvAvailableEnemies";
+            dgvAvailableEnemies.ReadOnly = true;
+            dgvAvailableEnemies.RowHeadersVisible = false;
+            dgvAvailableEnemies.RowHeadersWidth = 82;
+            dgvAvailableEnemies.Size = new Size(1864, 740);
+            dgvAvailableEnemies.TabIndex = 7;
+            // 
+            // btnConnect
+            // 
+            btnConnect.BackColor = Color.MediumSeaGreen;
+            btnConnect.FlatStyle = FlatStyle.Flat;
+            btnConnect.Font = new Font("Comic Sans MS", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnConnect.ForeColor = Color.White;
+            btnConnect.Location = new Point(814, 1108);
+            btnConnect.Name = "btnConnect";
+            btnConnect.Size = new Size(653, 81);
+            btnConnect.TabIndex = 10;
+            btnConnect.Text = "Select this enemy and Play!";
+            btnConnect.UseVisualStyleBackColor = false;
+            // 
+            // txtSearchEnemies
+            // 
+            txtSearchEnemies.BackColor = Color.White;
+            txtSearchEnemies.Font = new Font("Comic Sans MS", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtSearchEnemies.ForeColor = Color.White;
+            txtSearchEnemies.Location = new Point(1676, 88);
+            txtSearchEnemies.Name = "txtSearchEnemies";
+            txtSearchEnemies.Size = new Size(382, 67);
+            txtSearchEnemies.TabIndex = 11;
+            txtSearchEnemies.TextChanged += SearchEnemies;
+            // 
+            // lblSearchEnemies
+            // 
+            lblSearchEnemies.AutoSize = true;
+            lblSearchEnemies.BackColor = Color.Transparent;
+            lblSearchEnemies.Font = new Font("Comic Sans MS", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSearchEnemies.ForeColor = Color.White;
+            lblSearchEnemies.Location = new Point(1467, 91);
+            lblSearchEnemies.Name = "lblSearchEnemies";
+            lblSearchEnemies.Size = new Size(190, 60);
+            lblSearchEnemies.TabIndex = 12;
+            lblSearchEnemies.Text = "Search:";
+            lblSearchEnemies.Click += lblSearchEnemies_Click;
             // 
             // SearchEnemy
             // 
@@ -75,20 +135,31 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(2260, 1226);
-            Controls.Add(dataGridView1);
+            Controls.Add(lblSearchEnemies);
+            Controls.Add(txtSearchEnemies);
+            Controls.Add(btnConnect);
+            Controls.Add(dgvAvailableEnemies);
+            Controls.Add(panel1);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "SearchEnemy";
             Text = "Search Enemy";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvAvailableEnemies).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private PictureBox pictureBox1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Enemy;
+        private Panel panel1;
+        private Label lblEnemy;
+        private Button btnConnect;
+        private TextBox txtSearchEnemies;
+        private Label lblSearchEnemies;
+        public DataGridView dgvAvailableEnemies;
     }
 }
