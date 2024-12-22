@@ -35,6 +35,7 @@
             tb_serverIP = new TextBox();
             btn_connect = new Button();
             pictureBox1 = new PictureBox();
+            btnSignup = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -72,9 +73,9 @@
             serverIP.Location = new Point(79, 291);
             serverIP.Margin = new Padding(5, 0, 5, 0);
             serverIP.Name = "serverIP";
-            serverIP.Size = new Size(331, 74);
+            serverIP.Size = new Size(284, 74);
             serverIP.TabIndex = 2;
-            serverIP.Text = "Server IP: ";
+            serverIP.Text = "Password:";
             // 
             // tb_serverIP
             // 
@@ -116,6 +117,20 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
+            // btnSignup
+            // 
+            btnSignup.BackColor = Color.MediumSeaGreen;
+            btnSignup.FlatStyle = FlatStyle.Flat;
+            btnSignup.Font = new Font("Comic Sans MS", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSignup.ForeColor = Color.White;
+            btnSignup.Location = new Point(972, 503);
+            btnSignup.Name = "btnSignup";
+            btnSignup.Size = new Size(230, 109);
+            btnSignup.TabIndex = 6;
+            btnSignup.Text = "Sign up";
+            btnSignup.UseVisualStyleBackColor = false;
+            btnSignup.Click += btnSignup_Click;
+            // 
             // Welcome
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -124,6 +139,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(2260, 1226);
+            Controls.Add(btnSignup);
             Controls.Add(pictureBox1);
             Controls.Add(btn_connect);
             Controls.Add(tb_serverIP);
@@ -148,5 +164,6 @@
         private TextBox tb_serverIP;
         private Button btn_connect;
         private PictureBox pictureBox1;
+        private Button btnSignup;
     }
 }

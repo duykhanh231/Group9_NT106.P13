@@ -116,5 +116,10 @@ namespace Client
         {
             this.Close();
         }
+
+        private void lblSearchEnemies_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

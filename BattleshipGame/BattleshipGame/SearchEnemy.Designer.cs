@@ -79,7 +79,7 @@
             dgvAvailableEnemies.AllowUserToAddRows = false;
             dgvAvailableEnemies.AllowUserToDeleteRows = false;
             dgvAvailableEnemies.AllowUserToResizeRows = false;
-            dgvAvailableEnemies.BackgroundColor = Color.SteelBlue;
+            dgvAvailableEnemies.BackgroundColor = Color.White;
             dgvAvailableEnemies.BorderStyle = BorderStyle.Fixed3D;
             dgvAvailableEnemies.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAvailableEnemies.Location = new Point(194, 323);
@@ -106,7 +106,7 @@
             // 
             // txtSearchEnemies
             // 
-            txtSearchEnemies.BackColor = Color.SteelBlue;
+            txtSearchEnemies.BackColor = Color.White;
             txtSearchEnemies.Font = new Font("Comic Sans MS", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSearchEnemies.ForeColor = Color.White;
             txtSearchEnemies.Location = new Point(1676, 88);
@@ -118,14 +118,15 @@
             // lblSearchEnemies
             // 
             lblSearchEnemies.AutoSize = true;
-            lblSearchEnemies.BackColor = Color.SteelBlue;
+            lblSearchEnemies.BackColor = Color.Transparent;
             lblSearchEnemies.Font = new Font("Comic Sans MS", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSearchEnemies.ForeColor = Color.White;
             lblSearchEnemies.Location = new Point(1467, 91);
             lblSearchEnemies.Name = "lblSearchEnemies";
-            lblSearchEnemies.Size = new Size(171, 60);
+            lblSearchEnemies.Size = new Size(190, 60);
             lblSearchEnemies.TabIndex = 12;
-            lblSearchEnemies.Text = "Search";
+            lblSearchEnemies.Text = "Search:";
+            lblSearchEnemies.Click += lblSearchEnemies_Click;
             // 
             // SearchEnemy
             // 
