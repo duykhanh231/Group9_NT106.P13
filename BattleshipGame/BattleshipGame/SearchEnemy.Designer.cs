@@ -114,7 +114,7 @@
             // 
             txtSearchEnemies.BackColor = Color.White;
             txtSearchEnemies.Font = new Font("Comic Sans MS", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtSearchEnemies.ForeColor = Color.White;
+            txtSearchEnemies.ForeColor = Color.Black;
             txtSearchEnemies.Location = new Point(1031, 55);
             txtSearchEnemies.Margin = new Padding(2);
             txtSearchEnemies.Name = "txtSearchEnemies";

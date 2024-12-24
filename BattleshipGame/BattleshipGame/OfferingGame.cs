@@ -31,7 +31,7 @@ namespace Client
             }
             else
             {
-                //Get recipient ID from Combobox
+                
                 Program.enemySelect.enemyNick = enemies.SelectedValue.ToString();
                 Program.enemyNick = enemies.SelectedValue.ToString();
                 DialogResult = DialogResult.Yes;
@@ -45,8 +45,8 @@ namespace Client
         private void OfferingGame_Load(object sender, EventArgs e)
         {
             List<string> eNicks = enemiesNicks.Split(' ').ToList();
-            eNicks.RemoveAt(eNicks.Count() - 1); //EOF
-            eNicks.RemoveAt(0);//communique value
+            eNicks.RemoveAt(eNicks.Count() - 1); 
+            eNicks.RemoveAt(0);
 
             enemies.DataSource = eNicks;
             enemies.AutoCompleteMode = AutoCompleteMode.Append;

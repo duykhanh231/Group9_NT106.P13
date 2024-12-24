@@ -77,5 +77,10 @@ namespace Login_Register
             fogotpassword.ShowDialog();
             Close();
         }
+
+        private void gb_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
