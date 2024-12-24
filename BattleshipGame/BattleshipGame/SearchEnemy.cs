@@ -126,5 +126,10 @@ namespace Client
         {
 
         }
+
+        private void dgvAvailableEnemies_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

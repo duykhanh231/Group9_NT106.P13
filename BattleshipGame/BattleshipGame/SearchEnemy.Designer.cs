@@ -47,7 +47,7 @@
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(1347, 8);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(36, 38);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -60,7 +60,7 @@
             panel1.BackColor = Color.SteelBlue;
             panel1.Controls.Add(lblEnemy);
             panel1.Location = new Point(119, 132);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(1147, 74);
             panel1.TabIndex = 8;
@@ -86,7 +86,7 @@
             dgvAvailableEnemies.BorderStyle = BorderStyle.Fixed3D;
             dgvAvailableEnemies.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAvailableEnemies.Location = new Point(119, 202);
-            dgvAvailableEnemies.Margin = new Padding(2, 2, 2, 2);
+            dgvAvailableEnemies.Margin = new Padding(2);
             dgvAvailableEnemies.MultiSelect = false;
             dgvAvailableEnemies.Name = "dgvAvailableEnemies";
             dgvAvailableEnemies.ReadOnly = true;
@@ -94,6 +94,7 @@
             dgvAvailableEnemies.RowHeadersWidth = 82;
             dgvAvailableEnemies.Size = new Size(1147, 462);
             dgvAvailableEnemies.TabIndex = 7;
+            dgvAvailableEnemies.CellContentClick += dgvAvailableEnemies_CellContentClick;
             // 
             // btnConnect
             // 
@@ -102,7 +103,7 @@
             btnConnect.Font = new Font("Comic Sans MS", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnConnect.ForeColor = Color.White;
             btnConnect.Location = new Point(501, 692);
-            btnConnect.Margin = new Padding(2, 2, 2, 2);
+            btnConnect.Margin = new Padding(2);
             btnConnect.Name = "btnConnect";
             btnConnect.Size = new Size(402, 51);
             btnConnect.TabIndex = 10;
@@ -115,7 +116,7 @@
             txtSearchEnemies.Font = new Font("Comic Sans MS", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSearchEnemies.ForeColor = Color.White;
             txtSearchEnemies.Location = new Point(1031, 55);
-            txtSearchEnemies.Margin = new Padding(2, 2, 2, 2);
+            txtSearchEnemies.Margin = new Padding(2);
             txtSearchEnemies.Name = "txtSearchEnemies";
             txtSearchEnemies.Size = new Size(237, 45);
             txtSearchEnemies.TabIndex = 11;
@@ -141,7 +142,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1195, 689);
+            ClientSize = new Size(1393, 689);
             Controls.Add(lblSearchEnemies);
             Controls.Add(txtSearchEnemies);
             Controls.Add(btnConnect);
@@ -149,7 +150,7 @@
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "SearchEnemy";
             Text = "Search Enemy";
             Load += SearchEnemy_Load_1;
