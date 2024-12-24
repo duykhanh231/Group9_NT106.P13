@@ -66,10 +66,10 @@ namespace Client
                 
                 enemyAddressIPAndPort = dgvAvailableEnemies.Rows[row].Cells[0].Value.ToString();
                 enemyNick = dgvAvailableEnemies.Rows[row].Cells[1].Value.ToString();
-                btnConnect.Text = "Play with " + enemyNick;
+                btnStartGame.Text = "Play with " + enemyNick;
             }
         }
-        private void btnConnect_Click(object sender, EventArgs e)
+        private void btnStartGame_Click(object sender, EventArgs e)
         {
             if (enemyNick != "")
             {

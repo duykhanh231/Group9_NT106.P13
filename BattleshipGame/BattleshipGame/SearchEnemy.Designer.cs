@@ -36,6 +36,7 @@
             btnConnect = new Button();
             txtSearchEnemies = new TextBox();
             lblSearchEnemies = new Label();
+            btnStartGame = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAvailableEnemies).BeginInit();
@@ -136,6 +137,18 @@
             lblSearchEnemies.Text = "Search:";
             lblSearchEnemies.Click += lblSearchEnemies_Click;
             // 
+            // btnStartGame
+            // 
+            btnStartGame.BackColor = Color.FromArgb(128, 128, 255);
+            btnStartGame.Font = new Font("Viner Hand ITC", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnStartGame.ForeColor = Color.Lime;
+            btnStartGame.Location = new Point(119, 55);
+            btnStartGame.Name = "btnStartGame";
+            btnStartGame.Size = new Size(121, 45);
+            btnStartGame.TabIndex = 13;
+            btnStartGame.Text = "Start Game";
+            btnStartGame.UseVisualStyleBackColor = false;
+            // 
             // SearchEnemy
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -143,6 +156,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1393, 689);
+            Controls.Add(btnStartGame);
             Controls.Add(lblSearchEnemies);
             Controls.Add(txtSearchEnemies);
             Controls.Add(btnConnect);
@@ -171,5 +185,6 @@
         private TextBox txtSearchEnemies;
         private Label lblSearchEnemies;
         public DataGridView dgvAvailableEnemies;
+        private Button btnStartGame;
     }
 }
