@@ -63,7 +63,7 @@
             this.btnStart.TabIndex = 7;
             this.btnStart.Text = "Start Game";
             this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.BYes_Click);
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnDecline
             // 
@@ -78,7 +78,7 @@
             this.btnDecline.TabIndex = 8;
             this.btnDecline.Text = "Decline";
             this.btnDecline.UseVisualStyleBackColor = false;
-            this.btnDecline.Click += new System.EventHandler(this.BNo_Click);
+            this.btnDecline.Click += new System.EventHandler(this.btnDecline_Click);
             // 
             // cboEnemyNick
             // 

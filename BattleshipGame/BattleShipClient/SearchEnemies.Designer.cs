@@ -66,7 +66,7 @@
             this.btnConnect.TabIndex = 6;
             this.btnConnect.Text = "Select this enemy and play";
             this.btnConnect.UseVisualStyleBackColor = false;
-            this.btnConnect.Click += new System.EventHandler(this.BConnect_Click);
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // dgvAvailableEnemies
             // 

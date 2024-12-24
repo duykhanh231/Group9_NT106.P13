@@ -97,7 +97,7 @@
             this.btnConnect.TabIndex = 5;
             this.btnConnect.Text = "Let\'s go!";
             this.btnConnect.UseVisualStyleBackColor = false;
-            this.btnConnect.Click += new System.EventHandler(this.BConnect_Click);
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // pictureBox1
             // 

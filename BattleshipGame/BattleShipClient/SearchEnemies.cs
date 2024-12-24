@@ -70,7 +70,7 @@ namespace BattleShipClient
                     btnConnect.Text = "Play with " + enemyNick;
                 }
         }
-        private void BConnect_Click(object sender, EventArgs e)
+        private void btnConnect_Click(object sender, EventArgs e)
         {
             if (enemyNick != "")
             {

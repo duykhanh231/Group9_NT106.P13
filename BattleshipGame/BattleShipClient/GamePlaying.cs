@@ -121,82 +121,82 @@ namespace BattleShipClient
                 }
             }
         }
-        private int IsLeftNeighbour(int x, int y)
+        private int IsLeftNeighbor(int x, int y)
         {
             int x1=x;
             int y1=y-1;
             if (y1>-1)
             {
-                if (yourMap[x1,y1]==true) //check if neighbour has neighbour
+                if (yourMap[x1,y1]==true) //check if neighbor has neighbor
                 {
-                    return 1 + IsLeftNeighbour(x1, y1);
+                    return 1 + IsLeftNeighbor(x1, y1);
                 }
-                else //no neigbour
+                else //no neigbor
                 {
                     return 0;
                 }
             }
-            else //no neighbour
+            else //no neighbor
             {
                 return 0;
             }
         }
-        private int IsRightNeighbour(int x, int y)
+        private int IsRightNeighbor(int x, int y)
         {
             int x1 = x;
             int y1 = y + 1;
             if (y1 < 10)
             {
-                if (yourMap[x1, y1] == true) //check if neighbour has neighbour
+                if (yourMap[x1, y1] == true) //check if neighbor has neighbor
                 {
-                    return 1 + IsRightNeighbour(x1, y1);
+                    return 1 + IsRightNeighbor(x1, y1);
                 }
-                else //no neigbour
+                else //no neigbor
                 {
                     return 0;
                 }
             }
-            else //no neighbour
+            else //no neighbor
             {
                 return 0;
             }
         }
-        private int IsUpNeighbour(int x, int y)
+        private int IsUpNeighbor(int x, int y)
         {
             int x1 = x - 1;
             int y1 = y;
             if (x1 > -1)
             {
-                if (yourMap[x1, y1] == true) //check if neighbour has neighbour
+                if (yourMap[x1, y1] == true) //check if neighbor has neighbor
                 {
-                    return 1 + IsUpNeighbour(x1, y1);
+                    return 1 + IsUpNeighbor(x1, y1);
                 }
-                else //no neigbour
+                else //no neigbor
                 {
                     return 0;
                 }
             }
-            else //no neighbour
+            else //no neighbor
             {
                 return 0;
             }
         }
-        private int IsDownNeighbour(int x, int y)
+        private int IsDownNeighbor(int x, int y)
         {
             int x1 = x + 1;
             int y1 = y;
             if (x1 < 10)
             {
-                if (yourMap[x1, y1] == true) //check if neighbour has neighbour
+                if (yourMap[x1, y1] == true) //check if neighbor has neighbor
                 {
-                    return 1 + IsDownNeighbour(x1, y1);
+                    return 1 + IsDownNeighbor(x1, y1);
                 }
-                else //no neigbour
+                else //no neigbor
                 {
                     return 0;
                 }
             }
-            else //no neighbour
+            else //no neighbor
             {
                 return 0;
             }
@@ -222,10 +222,10 @@ namespace BattleShipClient
                 {
                     if (yourMap[i, j] == true)
                     {
-                        leftNo = IsLeftNeighbour(i, j);
-                        rightNo = IsRightNeighbour(i, j);
-                        upNo = IsUpNeighbour(i, j);
-                        downNo = IsDownNeighbour(i, j);
+                        leftNo = IsLeftNeighbor(i, j);
+                        rightNo = IsRightNeighbor(i, j);
+                        upNo = IsUpNeighbor(i, j);
+                        downNo = IsDownNeighbor(i, j);
                         if (leftNo==0 && rightNo==0 && downNo ==0 && upNo==0)
                         {
                             yourMapTmp[i, j] = true;
@@ -253,8 +253,8 @@ namespace BattleShipClient
                     if (yourMap[i, j] == true)
                     {
                         if (yourMapTmp[i, j] == true) continue;
-                        downNo = IsDownNeighbour(i, j);
-                        upNo = IsUpNeighbour(i, j);
+                        downNo = IsDownNeighbor(i, j);
+                        upNo = IsUpNeighbor(i, j);
                         if (downNo == 1 && upNo==0)
                         {
                             yourMapTmp[i, j] = true;
@@ -263,8 +263,8 @@ namespace BattleShipClient
                         }
                         else if (downNo==0 && upNo==0)
                         {
-                            rightNo = IsRightNeighbour(i, j);
-                            leftNo = IsLeftNeighbour(i, j);
+                            rightNo = IsRightNeighbor(i, j);
+                            leftNo = IsLeftNeighbor(i, j);
                             if (rightNo==1 && leftNo==0)
                             {
                                 yourMapTmp[i, j] = true;
@@ -293,8 +293,8 @@ namespace BattleShipClient
                     if (yourMap[i, j] == true)
                     {
                         if (yourMapTmp[i, j] == true) continue;
-                        downNo = IsDownNeighbour(i, j);
-                        upNo = IsUpNeighbour(i, j);
+                        downNo = IsDownNeighbor(i, j);
+                        upNo = IsUpNeighbor(i, j);
                         if (downNo == 2 && upNo == 0)
                         {
                             yourMapTmp[i, j] = true;
@@ -304,8 +304,8 @@ namespace BattleShipClient
                         }
                         else if (downNo == 0 && upNo == 0)
                         {
-                            rightNo = IsRightNeighbour(i, j);
-                            leftNo = IsLeftNeighbour(i, j);
+                            rightNo = IsRightNeighbor(i, j);
+                            leftNo = IsLeftNeighbor(i, j);
                             if (rightNo == 2 && leftNo == 0)
                             {
                                 yourMapTmp[i, j] = true;
@@ -335,8 +335,8 @@ namespace BattleShipClient
                     if (yourMap[i, j] == true)
                     {
                         if (yourMapTmp[i, j] == true) continue;
-                        downNo = IsDownNeighbour(i, j);
-                        upNo = IsUpNeighbour(i, j);
+                        downNo = IsDownNeighbor(i, j);
+                        upNo = IsUpNeighbor(i, j);
                         if (downNo == 3 && upNo == 0)
                         {
                             yourMapTmp[i, j] = true;
@@ -347,8 +347,8 @@ namespace BattleShipClient
                         }
                         else if (downNo == 0 && upNo == 0)
                         {
-                            rightNo = IsRightNeighbour(i, j);
-                            leftNo = IsLeftNeighbour(i, j);
+                            rightNo = IsRightNeighbor(i, j);
+                            leftNo = IsLeftNeighbor(i, j);
                             if (rightNo == 3 && leftNo == 0)
                             {
                                 yourMapTmp[i, j] = true;
@@ -471,15 +471,15 @@ namespace BattleShipClient
             var clickedButton = (Button)sender;//detect which button has been pressed
             int x = Int32.Parse(clickedButton.Name.Substring(0, 1)); //get x button co-ordinates
             int y = Int32.Parse(clickedButton.Name.Substring(1, 1)); //get y button co-ordinates
-            int leftNo = IsLeftNeighbour(x, y);
-            int rightNo = IsRightNeighbour(x, y);
-            int upNo = IsUpNeighbour(x, y);
-            int downNo = IsDownNeighbour(x, y);
+            int leftNo = IsLeftNeighbor(x, y);
+            int rightNo = IsRightNeighbor(x, y);
+            int upNo = IsUpNeighbor(x, y);
+            int downNo = IsDownNeighbor(x, y);
 
             //Select or not
             if (clickedButton.BackColor != Color.MediumBlue) //if button wasn't selected
             {
-                //check left neigbours
+                //check left neigbors
                 if ((leftNo + rightNo < 4) && (upNo + downNo < 4))
                 {
                     clickedButton.BackColor = Color.MediumBlue;

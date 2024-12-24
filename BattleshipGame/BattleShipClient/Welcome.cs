@@ -17,7 +17,7 @@ namespace BattleShipClient
             InitializeComponent();
         }
 
-        private void BConnect_Click(object sender, EventArgs e)
+        private void btnConnect_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text == "" || txtServerIP.Text == "")
             {
@@ -65,7 +65,7 @@ namespace BattleShipClient
         {
             if (e.KeyData == Keys.Return)
             {
-                BConnect_Click(sender, e);
+                btnConnect_Click(sender, e);
             }
         }
 

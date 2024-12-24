@@ -20,7 +20,7 @@ namespace BattleShipClient
             this.enemiesNicks = enemiesNicks;
         }
 
-        private void BYes_Click(object sender, EventArgs e)
+        private void btnStart_Click(object sender, EventArgs e)
         {
             if (cboEnemyNick.Text == "")
             {
@@ -35,7 +35,7 @@ namespace BattleShipClient
             }
         }
 
-        private void BNo_Click(object sender, EventArgs e)
+        private void btnDecline_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.No;
         }
