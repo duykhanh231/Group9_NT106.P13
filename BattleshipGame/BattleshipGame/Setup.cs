@@ -426,18 +426,15 @@ namespace BattleshipGame
             Panel panel = (Panel)this.Controls.Find("PYou", true).FirstOrDefault();
             button = (Button)panel.Controls.Find(x.ToString() + y.ToString(), true).FirstOrDefault();
             string message = "";
-            //Ship is hit
+            
             if (yourMap[x, y] == true)
             {
                 yourMapTmp[x, y] = true;
 
-                //else
+                
                 masts--;
 
-                //If ship to sink
-                //Send SinkShip
-                //yourMapTmp[x, y] = true;            
-                //Change color on your map
+                
                 button.BackColor = Color.Tomato;
                 Application.DoEvents();
                 if (masts == 0)
@@ -447,76 +444,76 @@ namespace BattleshipGame
                 }
                 else
                 {
-                    //Send Hit
+                    
                     message = (char)5 + " " + enemyNick + " <EOF>";
                     Program.client.Send(message);
-                    //Your turn
+                    
                     ((Panel)this.Controls.Find("PEnemy", true).FirstOrDefault()).Enabled = false;
                 }
             }
-            else//Send Miss
+            else
             {
                 message = (char)4 + " " + enemyNick + " <EOF>";
                 Program.client.Send(message);
                 button.BackColor = Color.Silver;
-                //Your turn
+                
                 ((Panel)this.Controls.Find("PEnemy", true).FirstOrDefault()).Enabled = true;
             }
             Application.DoEvents();
         }
         void setMastbuttonClick(object sender, EventArgs e)
         {
-            var clickedButton = (Button)sender;//detect which button has been pressed
-            int x = Int32.Parse(clickedButton.Name.Substring(0, 1)); //get x button co-ordinates
-            int y = Int32.Parse(clickedButton.Name.Substring(1, 1)); //get y button co-ordinates
+            var clickedButton = (Button)sender;
+            int x = Int32.Parse(clickedButton.Name.Substring(0, 1)); 
+            int y = Int32.Parse(clickedButton.Name.Substring(1, 1)); 
             int leftNo = IsLeftNeighbor(x, y);
             int rightNo = IsRightNeighbor(x, y);
             int upNo = IsUpNeighbor(x, y);
             int downNo = IsDownNeighbor(x, y);
 
-            //Select or not
-            if (clickedButton.BackColor != Color.MediumBlue) //if button wasn't selected
+            
+            if (clickedButton.BackColor != Color.MediumBlue) 
             {
-                //check left neigbours
+                
                 if ((leftNo + rightNo < 4) && (upNo + downNo < 4))
                 {
                     clickedButton.BackColor = Color.MediumBlue;
-                    //add to dictionary
+                    
                     selectedButtons.Add(clickedButton);
-                    //disable corners
+                    
                     DisableOrEnableAllCorners((Panel)clickedButton.Parent, x, y, false);
-                    //set true in game table
+                    
                     yourMap[x, y] = true;
                 }
             }
             else
             {
                 clickedButton.BackColor = Color.Transparent;
-                //enable corners
+               
                 DisableOrEnableAllCorners((Panel)clickedButton.Parent, x, y, true);
-                //remove from dictionary
+                
                 selectedButtons.Remove(clickedButton);
-                //disable corners for buttons in dictionary
+                
                 foreach (Button btn in selectedButtons)
                 {
                     DisableOrEnableAllCorners((Panel)btn.Parent, Int32.Parse(btn.Name[0].ToString()), Int32.Parse(btn.Name[1].ToString()), false);
                 }
-                //set false in game table
+                
                 yourMap[x, y] = false;
             }
-            //Check
+            
         }
         void buttonClick(object sender, EventArgs e)
         {
-            clickedButton = (Button)sender;//detect which button has been pressed
+            clickedButton = (Button)sender;
             clickedButton.Enabled = false;
-            int x = Int32.Parse(clickedButton.Name.Substring(0, 1)); //get x button co-ordinates
-            int y = Int32.Parse(clickedButton.Name.Substring(1, 1)); //get y button co-ordinates
-            //Send Shot
+            int x = Int32.Parse(clickedButton.Name.Substring(0, 1)); 
+            int y = Int32.Parse(clickedButton.Name.Substring(1, 1)); 
+            
             string message = "";
             message = (char)6 + " " + enemyNick + " " + x.ToString() + " " + y.ToString() + " <EOF>";
             Program.client.Send(message);
-            //Get answer form Program's thread       
+                  
         }
 
         private void Setup_Load(object sender, EventArgs e)

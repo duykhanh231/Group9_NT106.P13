@@ -60,6 +60,7 @@
             gb.Size = new Size(800, 541);
             gb.TabIndex = 8;
             gb.TabStop = false;
+            gb.Enter += gb_Enter;
             // 
             // btnTaoTaiKhoan
             // 
