@@ -73,13 +73,15 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PMast.SuspendLayout();
             this.PMastSet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BMastx1
             // 
-            this.BMastx1.BackColor = System.Drawing.Color.Cornsilk;
+            this.BMastx1.BackColor = System.Drawing.Color.SteelBlue;
             this.BMastx1.Enabled = false;
             this.BMastx1.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.BMastx1.Location = new System.Drawing.Point(96, 23);
@@ -93,8 +95,8 @@
             // 
             this.Lx4.AutoSize = true;
             this.Lx4.Font = new System.Drawing.Font("Circle", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lx4.ForeColor = System.Drawing.Color.White;
-            this.Lx4.Location = new System.Drawing.Point(122, 23);
+            this.Lx4.ForeColor = System.Drawing.Color.SteelBlue;
+            this.Lx4.Location = new System.Drawing.Point(122, 16);
             this.Lx4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lx4.Name = "Lx4";
             this.Lx4.Size = new System.Drawing.Size(46, 33);
@@ -103,7 +105,7 @@
             // 
             // BMastx21
             // 
-            this.BMastx21.BackColor = System.Drawing.Color.Cornsilk;
+            this.BMastx21.BackColor = System.Drawing.Color.SteelBlue;
             this.BMastx21.Enabled = false;
             this.BMastx21.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.BMastx21.Location = new System.Drawing.Point(75, 90);
@@ -115,7 +117,7 @@
             // 
             // BMastx22
             // 
-            this.BMastx22.BackColor = System.Drawing.Color.Cornsilk;
+            this.BMastx22.BackColor = System.Drawing.Color.SteelBlue;
             this.BMastx22.Enabled = false;
             this.BMastx22.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.BMastx22.Location = new System.Drawing.Point(96, 90);
@@ -129,8 +131,8 @@
             // 
             this.Lx3.AutoSize = true;
             this.Lx3.Font = new System.Drawing.Font("Circle", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lx3.ForeColor = System.Drawing.Color.White;
-            this.Lx3.Location = new System.Drawing.Point(123, 90);
+            this.Lx3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.Lx3.Location = new System.Drawing.Point(122, 85);
             this.Lx3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lx3.Name = "Lx3";
             this.Lx3.Size = new System.Drawing.Size(46, 33);
@@ -139,7 +141,7 @@
             // 
             // BMastx31
             // 
-            this.BMastx31.BackColor = System.Drawing.Color.Cornsilk;
+            this.BMastx31.BackColor = System.Drawing.Color.SteelBlue;
             this.BMastx31.Enabled = false;
             this.BMastx31.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.BMastx31.Location = new System.Drawing.Point(75, 161);
@@ -151,7 +153,7 @@
             // 
             // BMastx32
             // 
-            this.BMastx32.BackColor = System.Drawing.Color.Cornsilk;
+            this.BMastx32.BackColor = System.Drawing.Color.SteelBlue;
             this.BMastx32.Enabled = false;
             this.BMastx32.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.BMastx32.Location = new System.Drawing.Point(96, 161);
@@ -163,7 +165,7 @@
             // 
             // BMastx33
             // 
-            this.BMastx33.BackColor = System.Drawing.Color.Cornsilk;
+            this.BMastx33.BackColor = System.Drawing.Color.SteelBlue;
             this.BMastx33.Enabled = false;
             this.BMastx33.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.BMastx33.Location = new System.Drawing.Point(54, 161);
@@ -177,8 +179,8 @@
             // 
             this.Lx2.AutoSize = true;
             this.Lx2.Font = new System.Drawing.Font("Circle", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lx2.ForeColor = System.Drawing.Color.White;
-            this.Lx2.Location = new System.Drawing.Point(122, 160);
+            this.Lx2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.Lx2.Location = new System.Drawing.Point(123, 151);
             this.Lx2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lx2.Name = "Lx2";
             this.Lx2.Size = new System.Drawing.Size(46, 33);
@@ -187,7 +189,7 @@
             // 
             // BMastx41
             // 
-            this.BMastx41.BackColor = System.Drawing.Color.Cornsilk;
+            this.BMastx41.BackColor = System.Drawing.Color.SteelBlue;
             this.BMastx41.Enabled = false;
             this.BMastx41.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.BMastx41.Location = new System.Drawing.Point(38, 247);
@@ -199,7 +201,7 @@
             // 
             // BMastx42
             // 
-            this.BMastx42.BackColor = System.Drawing.Color.Cornsilk;
+            this.BMastx42.BackColor = System.Drawing.Color.SteelBlue;
             this.BMastx42.Enabled = false;
             this.BMastx42.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.BMastx42.Location = new System.Drawing.Point(80, 247);
@@ -211,7 +213,7 @@
             // 
             // BMastx44
             // 
-            this.BMastx44.BackColor = System.Drawing.Color.Cornsilk;
+            this.BMastx44.BackColor = System.Drawing.Color.SteelBlue;
             this.BMastx44.Enabled = false;
             this.BMastx44.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.BMastx44.Location = new System.Drawing.Point(58, 247);
@@ -223,7 +225,7 @@
             // 
             // BMastx43
             // 
-            this.BMastx43.BackColor = System.Drawing.Color.Cornsilk;
+            this.BMastx43.BackColor = System.Drawing.Color.SteelBlue;
             this.BMastx43.Enabled = false;
             this.BMastx43.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.BMastx43.Location = new System.Drawing.Point(100, 247);
@@ -237,8 +239,8 @@
             // 
             this.Lx1.AutoSize = true;
             this.Lx1.Font = new System.Drawing.Font("Circle", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lx1.ForeColor = System.Drawing.Color.White;
-            this.Lx1.Location = new System.Drawing.Point(123, 249);
+            this.Lx1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.Lx1.Location = new System.Drawing.Point(123, 237);
             this.Lx1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lx1.Name = "Lx1";
             this.Lx1.Size = new System.Drawing.Size(46, 33);
@@ -261,7 +263,7 @@
             this.PMast.Controls.Add(this.BMastx44);
             this.PMast.Controls.Add(this.BMastx42);
             this.PMast.Controls.Add(this.Lx3);
-            this.PMast.Location = new System.Drawing.Point(728, 310);
+            this.PMast.Location = new System.Drawing.Point(891, 313);
             this.PMast.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PMast.Name = "PMast";
             this.PMast.Size = new System.Drawing.Size(205, 336);
@@ -298,18 +300,18 @@
             this.PMastSet.Controls.Add(this.button6);
             this.PMastSet.Controls.Add(this.button5);
             this.PMastSet.Font = new System.Drawing.Font("Comic Sans MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PMastSet.Location = new System.Drawing.Point(18, 250);
+            this.PMastSet.Location = new System.Drawing.Point(13, 254);
             this.PMastSet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PMastSet.Name = "PMastSet";
-            this.PMastSet.Size = new System.Drawing.Size(352, 410);
+            this.PMastSet.Size = new System.Drawing.Size(300, 410);
             this.PMastSet.TabIndex = 27;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Circle", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(143, 321);
+            this.label3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label3.Location = new System.Drawing.Point(124, 321);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 33);
@@ -320,8 +322,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Circle", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(143, 222);
+            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label2.Location = new System.Drawing.Point(124, 222);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 33);
@@ -332,8 +334,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Circle", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(143, 142);
+            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.Location = new System.Drawing.Point(124, 142);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 33);
@@ -342,10 +344,10 @@
             // 
             // button19
             // 
-            this.button19.BackColor = System.Drawing.Color.Cornsilk;
+            this.button19.BackColor = System.Drawing.Color.SteelBlue;
             this.button19.Enabled = false;
             this.button19.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button19.Location = new System.Drawing.Point(183, 139);
+            this.button19.Location = new System.Drawing.Point(164, 139);
             this.button19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(22, 23);
@@ -354,10 +356,10 @@
             // 
             // button18
             // 
-            this.button18.BackColor = System.Drawing.Color.Cornsilk;
+            this.button18.BackColor = System.Drawing.Color.SteelBlue;
             this.button18.Enabled = false;
             this.button18.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button18.Location = new System.Drawing.Point(183, 161);
+            this.button18.Location = new System.Drawing.Point(164, 161);
             this.button18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(22, 23);
@@ -366,10 +368,10 @@
             // 
             // button17
             // 
-            this.button17.BackColor = System.Drawing.Color.Cornsilk;
+            this.button17.BackColor = System.Drawing.Color.SteelBlue;
             this.button17.Enabled = false;
             this.button17.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button17.Location = new System.Drawing.Point(183, 253);
+            this.button17.Location = new System.Drawing.Point(164, 253);
             this.button17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(22, 23);
@@ -378,10 +380,10 @@
             // 
             // button16
             // 
-            this.button16.BackColor = System.Drawing.Color.Cornsilk;
+            this.button16.BackColor = System.Drawing.Color.SteelBlue;
             this.button16.Enabled = false;
             this.button16.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button16.Location = new System.Drawing.Point(183, 232);
+            this.button16.Location = new System.Drawing.Point(164, 232);
             this.button16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(22, 23);
@@ -390,10 +392,10 @@
             // 
             // button15
             // 
-            this.button15.BackColor = System.Drawing.Color.Cornsilk;
+            this.button15.BackColor = System.Drawing.Color.SteelBlue;
             this.button15.Enabled = false;
             this.button15.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button15.Location = new System.Drawing.Point(183, 210);
+            this.button15.Location = new System.Drawing.Point(164, 210);
             this.button15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(22, 23);
@@ -402,10 +404,10 @@
             // 
             // button14
             // 
-            this.button14.BackColor = System.Drawing.Color.Cornsilk;
+            this.button14.BackColor = System.Drawing.Color.SteelBlue;
             this.button14.Enabled = false;
             this.button14.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button14.Location = new System.Drawing.Point(183, 295);
+            this.button14.Location = new System.Drawing.Point(164, 295);
             this.button14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(22, 23);
@@ -414,10 +416,10 @@
             // 
             // button13
             // 
-            this.button13.BackColor = System.Drawing.Color.Cornsilk;
+            this.button13.BackColor = System.Drawing.Color.SteelBlue;
             this.button13.Enabled = false;
             this.button13.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button13.Location = new System.Drawing.Point(183, 316);
+            this.button13.Location = new System.Drawing.Point(164, 316);
             this.button13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(22, 23);
@@ -426,10 +428,10 @@
             // 
             // button12
             // 
-            this.button12.BackColor = System.Drawing.Color.Cornsilk;
+            this.button12.BackColor = System.Drawing.Color.SteelBlue;
             this.button12.Enabled = false;
             this.button12.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button12.Location = new System.Drawing.Point(183, 338);
+            this.button12.Location = new System.Drawing.Point(164, 338);
             this.button12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(22, 23);
@@ -438,10 +440,10 @@
             // 
             // button11
             // 
-            this.button11.BackColor = System.Drawing.Color.Cornsilk;
+            this.button11.BackColor = System.Drawing.Color.SteelBlue;
             this.button11.Enabled = false;
             this.button11.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button11.Location = new System.Drawing.Point(183, 359);
+            this.button11.Location = new System.Drawing.Point(164, 359);
             this.button11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(22, 23);
@@ -452,8 +454,8 @@
             // 
             this.lblSetInfo.AutoSize = true;
             this.lblSetInfo.Font = new System.Drawing.Font("Comic Sans MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblSetInfo.ForeColor = System.Drawing.Color.White;
-            this.lblSetInfo.Location = new System.Drawing.Point(50, 0);
+            this.lblSetInfo.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblSetInfo.Location = new System.Drawing.Point(31, 0);
             this.lblSetInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSetInfo.Name = "lblSetInfo";
             this.lblSetInfo.Size = new System.Drawing.Size(224, 45);
@@ -462,10 +464,10 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Cornsilk;
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
             this.button1.Enabled = false;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.Location = new System.Drawing.Point(113, 148);
+            this.button1.Location = new System.Drawing.Point(94, 148);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(22, 23);
@@ -474,10 +476,10 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Cornsilk;
+            this.button2.BackColor = System.Drawing.Color.SteelBlue;
             this.button2.Enabled = false;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button2.Location = new System.Drawing.Point(183, 82);
+            this.button2.Location = new System.Drawing.Point(164, 82);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(22, 23);
@@ -488,8 +490,8 @@
             // 
             this.LSetMast2.AutoSize = true;
             this.LSetMast2.Font = new System.Drawing.Font("Circle", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LSetMast2.ForeColor = System.Drawing.Color.White;
-            this.LSetMast2.Location = new System.Drawing.Point(217, 145);
+            this.LSetMast2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.LSetMast2.Location = new System.Drawing.Point(198, 145);
             this.LSetMast2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LSetMast2.Name = "LSetMast2";
             this.LSetMast2.Size = new System.Drawing.Size(46, 33);
@@ -498,10 +500,10 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Cornsilk;
+            this.button3.BackColor = System.Drawing.Color.SteelBlue;
             this.button3.Enabled = false;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button3.Location = new System.Drawing.Point(113, 230);
+            this.button3.Location = new System.Drawing.Point(94, 230);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(22, 23);
@@ -510,10 +512,10 @@
             // 
             // button10
             // 
-            this.button10.BackColor = System.Drawing.Color.Cornsilk;
+            this.button10.BackColor = System.Drawing.Color.SteelBlue;
             this.button10.Enabled = false;
             this.button10.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button10.Location = new System.Drawing.Point(51, 328);
+            this.button10.Location = new System.Drawing.Point(32, 328);
             this.button10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(22, 23);
@@ -524,8 +526,8 @@
             // 
             this.LSetMast4.AutoSize = true;
             this.LSetMast4.Font = new System.Drawing.Font("Circle", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LSetMast4.ForeColor = System.Drawing.Color.White;
-            this.LSetMast4.Location = new System.Drawing.Point(217, 319);
+            this.LSetMast4.ForeColor = System.Drawing.Color.SteelBlue;
+            this.LSetMast4.Location = new System.Drawing.Point(198, 319);
             this.LSetMast4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LSetMast4.Name = "LSetMast4";
             this.LSetMast4.Size = new System.Drawing.Size(46, 33);
@@ -534,10 +536,10 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.Cornsilk;
+            this.button9.BackColor = System.Drawing.Color.SteelBlue;
             this.button9.Enabled = false;
             this.button9.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button9.Location = new System.Drawing.Point(113, 328);
+            this.button9.Location = new System.Drawing.Point(94, 328);
             this.button9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(22, 23);
@@ -548,8 +550,8 @@
             // 
             this.LSetMast3.AutoSize = true;
             this.LSetMast3.Font = new System.Drawing.Font("Circle", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LSetMast3.ForeColor = System.Drawing.Color.White;
-            this.LSetMast3.Location = new System.Drawing.Point(217, 224);
+            this.LSetMast3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.LSetMast3.Location = new System.Drawing.Point(198, 224);
             this.LSetMast3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LSetMast3.Name = "LSetMast3";
             this.LSetMast3.Size = new System.Drawing.Size(46, 33);
@@ -558,10 +560,10 @@
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.Cornsilk;
+            this.button8.BackColor = System.Drawing.Color.SteelBlue;
             this.button8.Enabled = false;
             this.button8.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button8.Location = new System.Drawing.Point(71, 230);
+            this.button8.Location = new System.Drawing.Point(52, 230);
             this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(22, 23);
@@ -572,8 +574,8 @@
             // 
             this.LSetMast1.AutoSize = true;
             this.LSetMast1.Font = new System.Drawing.Font("Circle", 9.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LSetMast1.ForeColor = System.Drawing.Color.White;
-            this.LSetMast1.Location = new System.Drawing.Point(217, 76);
+            this.LSetMast1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.LSetMast1.Location = new System.Drawing.Point(198, 76);
             this.LSetMast1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LSetMast1.Name = "LSetMast1";
             this.LSetMast1.Size = new System.Drawing.Size(46, 33);
@@ -582,10 +584,10 @@
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.Cornsilk;
+            this.button7.BackColor = System.Drawing.Color.SteelBlue;
             this.button7.Enabled = false;
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button7.Location = new System.Drawing.Point(92, 148);
+            this.button7.Location = new System.Drawing.Point(73, 148);
             this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(22, 23);
@@ -594,10 +596,10 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Cornsilk;
+            this.button4.BackColor = System.Drawing.Color.SteelBlue;
             this.button4.Enabled = false;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button4.Location = new System.Drawing.Point(92, 230);
+            this.button4.Location = new System.Drawing.Point(73, 230);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(22, 23);
@@ -606,10 +608,10 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.Cornsilk;
+            this.button6.BackColor = System.Drawing.Color.SteelBlue;
             this.button6.Enabled = false;
             this.button6.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button6.Location = new System.Drawing.Point(73, 328);
+            this.button6.Location = new System.Drawing.Point(54, 328);
             this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(22, 23);
@@ -618,10 +620,10 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Cornsilk;
+            this.button5.BackColor = System.Drawing.Color.SteelBlue;
             this.button5.Enabled = false;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.button5.Location = new System.Drawing.Point(93, 328);
+            this.button5.Location = new System.Drawing.Point(74, 328);
             this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(22, 23);
@@ -634,7 +636,7 @@
             this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlay.Font = new System.Drawing.Font("Comic Sans MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPlay.ForeColor = System.Drawing.Color.White;
-            this.btnPlay.Location = new System.Drawing.Point(1113, 592);
+            this.btnPlay.Location = new System.Drawing.Point(1121, 582);
             this.btnPlay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(132, 57);
@@ -643,16 +645,27 @@
             this.btnPlay.UseVisualStyleBackColor = false;
             this.btnPlay.Click += new System.EventHandler(this.playbuttonClick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1278, 249);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            // 
             // GamePlaying
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1278, 678);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.PMastSet);
             this.Controls.Add(this.PMast);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
@@ -665,6 +678,7 @@
             this.PMast.PerformLayout();
             this.PMastSet.ResumeLayout(false);
             this.PMastSet.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -714,6 +728,7 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
