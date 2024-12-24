@@ -36,7 +36,9 @@
             btn_connect = new Button();
             pictureBox1 = new PictureBox();
             btnSignup = new Button();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // AccountName
@@ -45,10 +47,9 @@
             AccountName.BackColor = Color.Transparent;
             AccountName.Font = new Font("Comic Sans MS", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AccountName.ForeColor = Color.Snow;
-            AccountName.Location = new Point(79, 162);
-            AccountName.Margin = new Padding(5, 0, 5, 0);
+            AccountName.Location = new Point(49, 101);
             AccountName.Name = "AccountName";
-            AccountName.Size = new Size(257, 74);
+            AccountName.Size = new Size(164, 48);
             AccountName.TabIndex = 0;
             AccountName.Text = "Moniker:";
             // 
@@ -57,11 +58,10 @@
             tb_Accountname.BackColor = SystemColors.ButtonFace;
             tb_Accountname.BorderStyle = BorderStyle.None;
             tb_Accountname.Font = new Font("Comic Sans MS", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tb_Accountname.Location = new Point(671, 154);
-            tb_Accountname.Margin = new Padding(5);
+            tb_Accountname.Location = new Point(413, 96);
             tb_Accountname.Multiline = true;
             tb_Accountname.Name = "tb_Accountname";
-            tb_Accountname.Size = new Size(531, 82);
+            tb_Accountname.Size = new Size(327, 51);
             tb_Accountname.TabIndex = 1;
             // 
             // serverIP
@@ -70,10 +70,9 @@
             serverIP.BackColor = Color.Transparent;
             serverIP.Font = new Font("Comic Sans MS", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             serverIP.ForeColor = Color.Snow;
-            serverIP.Location = new Point(79, 291);
-            serverIP.Margin = new Padding(5, 0, 5, 0);
+            serverIP.Location = new Point(49, 182);
             serverIP.Name = "serverIP";
-            serverIP.Size = new Size(308, 74);
+            serverIP.Size = new Size(198, 48);
             serverIP.TabIndex = 2;
             serverIP.Text = "Server IP:";
             // 
@@ -82,11 +81,10 @@
             tb_serverIP.BackColor = SystemColors.ButtonFace;
             tb_serverIP.BorderStyle = BorderStyle.None;
             tb_serverIP.Font = new Font("Comic Sans MS", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tb_serverIP.Location = new Point(671, 275);
-            tb_serverIP.Margin = new Padding(5);
+            tb_serverIP.Location = new Point(413, 172);
             tb_serverIP.Multiline = true;
             tb_serverIP.Name = "tb_serverIP";
-            tb_serverIP.Size = new Size(531, 77);
+            tb_serverIP.Size = new Size(327, 48);
             tb_serverIP.TabIndex = 3;
             // 
             // btn_connect
@@ -95,10 +93,9 @@
             btn_connect.FlatStyle = FlatStyle.Flat;
             btn_connect.Font = new Font("Comic Sans MS", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_connect.ForeColor = Color.Snow;
-            btn_connect.Location = new Point(671, 503);
-            btn_connect.Margin = new Padding(5);
+            btn_connect.Location = new Point(413, 314);
             btn_connect.Name = "btn_connect";
-            btn_connect.Size = new Size(258, 109);
+            btn_connect.Size = new Size(159, 68);
             btn_connect.TabIndex = 4;
             btn_connect.Text = "Let Go!";
             btn_connect.UseVisualStyleBackColor = false;
@@ -109,9 +106,10 @@
             pictureBox1.BackColor = SystemColors.Control;
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(2189, 12);
+            pictureBox1.Location = new Point(1347, 8);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(59, 61);
+            pictureBox1.Size = new Size(36, 38);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
@@ -123,22 +121,37 @@
             btnSignup.FlatStyle = FlatStyle.Flat;
             btnSignup.Font = new Font("Comic Sans MS", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSignup.ForeColor = Color.White;
-            btnSignup.Location = new Point(972, 503);
+            btnSignup.Location = new Point(598, 314);
+            btnSignup.Margin = new Padding(2, 2, 2, 2);
             btnSignup.Name = "btnSignup";
-            btnSignup.Size = new Size(230, 109);
+            btnSignup.Size = new Size(142, 68);
             btnSignup.TabIndex = 6;
             btnSignup.Text = "Sign up";
             btnSignup.UseVisualStyleBackColor = false;
             btnSignup.Click += btnSignup_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.SteelBlue;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(1148, 11);
+            pictureBox2.Margin = new Padding(2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(36, 38);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
             // Welcome
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(2260, 1226);
+            ClientSize = new Size(1195, 689);
+            Controls.Add(pictureBox2);
             Controls.Add(btnSignup);
             Controls.Add(pictureBox1);
             Controls.Add(btn_connect);
@@ -147,11 +160,11 @@
             Controls.Add(tb_Accountname);
             Controls.Add(AccountName);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(5);
             Name = "Welcome";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Welcome";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -165,5 +178,6 @@
         private Button btn_connect;
         private PictureBox pictureBox1;
         private Button btnSignup;
+        private PictureBox pictureBox2;
     }
 }
