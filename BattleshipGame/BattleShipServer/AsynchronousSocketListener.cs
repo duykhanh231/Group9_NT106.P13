@@ -9,21 +9,19 @@ using System.Threading;
 
 namespace BattleShipServer
 {
-    //https://msdn.microsoft.com/pl-pl/library/fx6588te(v=vs.110).aspx
+    
     class AsynchronousSocketListener
     {
-        // Thread signal.
+        
         public static ManualResetEvent allDone = new ManualResetEvent(false);
         public AsynchronousSocketListener() { }
 
         public static void StartListening()
         {
-            // Data buffer for incoming data.
+            
             byte[] bytes = new Byte[1024];
 
-            // Establish the local endpoint for the socket.
-            // The DNS name of the computer
-            // running the listener is "host.contoso.com".
+            
             IPHostEntry ipHostInfo = Dns.Resolve(Dns.GetHostName());
             int i = 0;
             Console.WriteLine("Choose server IPv4 address:");
@@ -42,11 +40,11 @@ namespace BattleShipServer
             IPAddress ipAddress = ipHostInfo.AddressList[i];
             IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
 
-            // Create a TCP/IP socket.
+           
             Socket listener = new Socket(AddressFamily.InterNetwork,
                 SocketType.Stream, ProtocolType.Tcp);
 
-            // Bind the socket to the local endpoint and listen for incoming connections.
+            
             try
             {
                 listener.Bind(localEndPoint);
@@ -55,13 +53,13 @@ namespace BattleShipServer
                 Console.WriteLine("Server is running (" + ipAddress + ")");
                 while (true)
                 {
-                    // Set the event to nonsignaled state.
+                    
                     allDone.Reset();
 
-                    // Start an asynchronous socket to listen for connections.                
+                                  
                     listener.BeginAccept(new AsyncCallback(AcceptCallback),listener);
 
-                    // Wait until a connection is made before continuing.
+                   
                     allDone.WaitOne();
                 }
 
@@ -78,14 +76,14 @@ namespace BattleShipServer
 
         public static void AcceptCallback(IAsyncResult ar)
         {
-            // Signal the main thread to continue.
+            
             allDone.Set();
 
-            // Get the socket that handles the client request.
+           
             Socket listener = (Socket)ar.AsyncState;
             Socket handler = listener.EndAccept(ar);
 
-            // Create the state object.
+            
             StateObject state = new StateObject();
             state.workSocket = handler;
             handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0, new AsyncCallback(ReadCallback), state);
@@ -95,37 +93,33 @@ namespace BattleShipServer
         {
             String content = String.Empty;
 
-            // Retrieve the state object and the handler socket
-            // from the asynchronous state object.
+            
             StateObject state = (StateObject)ar.AsyncState;
             Socket handler = state.workSocket;
 
             int bytesRead = 0;
 
-            // Read data from the client socket. 
+            
             bytesRead = handler.EndReceive(ar);
 
             if (bytesRead > 0)
             {
-                // There  might be more data, so store the data received so far.
+                
                 state.sb.Append(Encoding.ASCII.GetString(
                     state.buffer, 0, bytesRead));
 
-                // Check for end-of-file tag. If it is not there, read 
-                // more data.
+                
                 content = state.sb.ToString();
                 if (content.IndexOf("<EOF>") > -1)
                 {
-                    // All the data has been read from the 
-                    // client. Display it on the console.
+                    
                     Console.WriteLine("Read {0} bytes from socket. \nData : {1}",
                         content.Length, content);
 
                     string messageBits = Utilities.getBinaryMessage(content);
-                    //take 8 bits to recognize the communique
-                    int bits8 = Convert.ToInt32(messageBits.Substring(0, 8), 2);//decimal value
-                    //Get parameters sent with message
-                    //parameters[0] is message flag
+                    
+                    int bits8 = Convert.ToInt32(messageBits.Substring(0, 8), 2);
+                    
                     string[] parameters = content.Split(' ');
                     string nick = String.Empty;
                     string IPport = String.Empty;
@@ -137,18 +131,16 @@ namespace BattleShipServer
                     string whomSent = "";
                     switch (bits8)
                     {
-                        case 0://StarGame
+                        case 0:
                             {
-                                //Get nick
+                                
                                 whoSent = parameters[1];
-                                //Get nick
+                               
                                 whomSent = parameters[2];
 
                                 if (Program.loggedplayingNicks.ContainsKey(whomSent))
                                 {
-                                    //Check if whomSent has sent message earlier
-
-                                    //Check if whom+who is on whowhomSentStart & whowhomSentGiveUp
+                                    
                                     if (!Program.whowhomSentStart.Contains(whomSent + whoSent) && !Program.whowhomSentGiveUp.Contains(whomSent + whoSent))
                                     {
                                         Program.whowhomSentStart.Add(whoSent + whomSent);
@@ -158,9 +150,9 @@ namespace BattleShipServer
                                         new AsyncCallback(ReadCallback), state);
                                         break;
                                     }
-                                    else if (Program.whowhomSentStart.Contains(whomSent + whoSent))//Check if whom+who is on whowhomSentStart
+                                    else if (Program.whowhomSentStart.Contains(whomSent + whoSent))
                                     {
-                                        //Send OK to both players
+                                       
                                         if (Program.loggedplayingNicks.ContainsKey(whoSent))
                                         {
                                             Send(Program.loggedplayingNicks[whoSent], ((char)16).ToString() + " <EOF>");
@@ -169,7 +161,7 @@ namespace BattleShipServer
                                         {
                                             Send(Program.loggedplayingNicks[whomSent], ((char)0).ToString() + " <EOF>");
                                         }
-                                        //Remove both players from whowhomSentStart
+                                        
                                         Program.whowhomSentStart.Remove(whomSent + whoSent);
                                         state.buffer = new byte[1024];
                                         state.sb = new StringBuilder();
@@ -178,7 +170,7 @@ namespace BattleShipServer
                                         break;
 
                                     }
-                                    else if (Program.whowhomSentGiveUp.Contains(whomSent + whoSent))//Check if whom+who is on whowhomSentGiveUp
+                                    else if (Program.whowhomSentGiveUp.Contains(whomSent + whoSent))
                                     {
                                         if (Program.loggedplayingNicks.ContainsKey(whoSent))
                                         {
@@ -203,7 +195,7 @@ namespace BattleShipServer
                                 new AsyncCallback(ReadCallback), state);
                                 break;
                             }
-                        case 1://EndGame
+                        case 1:
                             {
                                 nick = parameters[1];
                                 enemyNick = parameters[2];
@@ -231,15 +223,13 @@ namespace BattleShipServer
                                 new AsyncCallback(ReadCallback), state);
                                 break;
                             }
-                        case 2: //Give up
+                        case 2: 
                             { 
-                                //Get nick
+                                
                                 whoSent = parameters[1];
-                                //Get nick
+                                
                                 whomSent = parameters[2];
-                                //Check if whomSent has sent message earlier
-                               
-                                //Check if whom+who is on whowhomSentStart & whowhomSentGiveUp
+                                
                                 if (!Program.whowhomSentStart.Contains(whomSent + whoSent) && !Program.whowhomSentGiveUp.Contains(whomSent + whoSent))
                                 {
                                     Program.whowhomSentGiveUp.Add(whoSent + whomSent);
@@ -258,17 +248,17 @@ namespace BattleShipServer
                                     new AsyncCallback(ReadCallback), state);
                                     break;
                                 }
-                                else if (Program.whowhomSentStart.Contains(whomSent + whoSent))//Check if whom+who is on whowhomSentStart
+                                else if (Program.whowhomSentStart.Contains(whomSent + whoSent))
                                 {
-                                    //Send Fail to whom player
+                                    
                                     if (Program.loggedplayingNicks.ContainsKey(whomSent))
                                     {
                                         Send(Program.loggedplayingNicks[whomSent], ((char)9).ToString() + " <EOF>");
                                     }
-                                    //Remove both players from whowhomSentStart
+                                    
                                     Program.whowhomSentStart.Remove(whomSent + whoSent);
 
-                                    //Remove both players from loggedplayingNicks
+                                    
                                     if (Program.loggedplayingNicks.ContainsKey(whomSent))
                                     {
                                         if (!Program.loggedNicks.ContainsKey(whomSent))
@@ -292,7 +282,7 @@ namespace BattleShipServer
                                     new AsyncCallback(ReadCallback), state);
                                     break;
                                 }
-                                else if (Program.whowhomSentGiveUp.Contains(whomSent + whoSent))//Check if whom+who is on whowhomSentGiveUp
+                                else if (Program.whowhomSentGiveUp.Contains(whomSent + whoSent))
                                 {
                                     Program.whowhomSentGiveUp.Remove(whomSent + whoSent);
                                     if (Program.loggedplayingNicks.ContainsKey(whoSent))
@@ -312,13 +302,13 @@ namespace BattleShipServer
                                 new AsyncCallback(ReadCallback), state);
                                 break;
                             }
-                        case 3: //SinkShip
+                        case 3: 
                             {
 
 
                                 break;
                             }
-                        case 4: //Miss
+                        case 4: 
                             {
                                 enemyNick = parameters[1];
                                 if (Program.loggedplayingNicks.ContainsKey(enemyNick))
@@ -332,7 +322,7 @@ namespace BattleShipServer
                                 new AsyncCallback(ReadCallback), state);
                                 break;
                             }
-                        case 5: //Hit
+                        case 5: 
                             {
                                 enemyNick = parameters[1];
                                 if (Program.loggedplayingNicks.ContainsKey(enemyNick))
@@ -346,7 +336,7 @@ namespace BattleShipServer
                                 new AsyncCallback(ReadCallback), state);
                                 break;
                             }
-                        case 6://Shot
+                        case 6:
                             {
                                 enemyNick = parameters[1];
                                 string x = parameters[2];
@@ -362,14 +352,14 @@ namespace BattleShipServer
                                 new AsyncCallback(ReadCallback), state);
                                 break;
                             }
-                        case 7://GetOffers - somebody want to know who offers him game
+                        case 7:
                             {
-                                //Get nick
+                                
                                 nick = parameters[1];
-                                //enemiesoffers
+                                
                                 if (Program.enemiesoffers.ContainsKey(nick))
                                 {
-                                    //enemy1 enemy 2 ... enemy3
+                                    
                                     string enemiesString ="";
                                     foreach (var item in Program.enemiesoffers[nick])
                                     {
@@ -378,7 +368,7 @@ namespace BattleShipServer
                                     string message = ((char)7).ToString() + " " + enemiesString + "<EOF>";
                                     Send(handler, message);
                                 }
-                                else//Fail
+                                else
                                 {
                                     Send(handler, ((char)7).ToString() + " <EOF>");
                                 }
@@ -388,11 +378,11 @@ namespace BattleShipServer
                                 new AsyncCallback(ReadCallback), state);
                                 break;
                             }
-                        case 8://Offer - somebody offers someone game
+                        case 8:
                             {
-                                //who offers (enemy)
+                                
                                 nick = parameters[1];
-                                //whom he offers
+                                
                                 enemyNick = parameters[2];
                                 bool nickOffers = false;
                                 if (Program.enemiesoffers.ContainsKey(nick))
@@ -420,7 +410,7 @@ namespace BattleShipServer
                                 new AsyncCallback(ReadCallback), state);
                                 break;
                             }
-                        case 9: //Fail
+                        case 9: 
                             {
                                 Send(handler, ((char)10).ToString() + " <EOF>");
 
@@ -430,7 +420,7 @@ namespace BattleShipServer
                                 new AsyncCallback(ReadCallback), state);
                                 break;
                             }
-                        case 10: //OK
+                        case 10: 
                             {
                                 Send(handler, ((char)10).ToString() + " <EOF>");
 
@@ -440,26 +430,26 @@ namespace BattleShipServer
                                 new AsyncCallback(ReadCallback), state);
                                 break;
                             }
-                        case 11: //Join (Connection: Client joins to server) (TICK)
+                        case 11: 
                             {
-                                //Get nick
+                                
                                 nick = parameters[1];
-                                //Get IP
-                                IPport = handler.RemoteEndPoint.ToString().Split(':')[0]; //get IP
-                                //Get port No
+                               
+                                IPport = handler.RemoteEndPoint.ToString().Split(':')[0]; 
+                                
                                 port = parameters[2];
                                 IPport += ":" + port;
-                                //Check if nick is in dictionary
-                                if (Program.loggedNicks.ContainsKey(nick)) //nick is occupied
+                                
+                                if (Program.loggedNicks.ContainsKey(nick)) 
                                 {
-                                    //Send Fail
+                                    
                                     Send(handler, ((char)9).ToString() + " <EOF>");
                                 }
-                                else //User can join to server
+                                else 
                                 {
-                                    //Add to players dictionary <nick, IP>
+                                    
                                     Program.loggedNicks.Add(nick, handler);
-                                    //If everything OK send OK
+                                    
                                     Send(handler, ((char)10).ToString() + " <EOF>");
                                 }
 
@@ -469,14 +459,14 @@ namespace BattleShipServer
                                 new AsyncCallback(ReadCallback), state);
                                 break;
                             }
-                        case 12: //Agree to play
+                        case 12: 
                             {
                                 nick = parameters[1];
                                 enemyNick = parameters[2];              
-                                //Send OK to enemy you want to play
+                                
                                 if (Program.enemiesoffers.ContainsKey(nick))
                                 {
-                                    if (nick != enemyNick) //If i don't decline
+                                    if (nick != enemyNick) 
                                     {
                                         if (Program.enemiesoffers[nick].Contains(enemyNick))
                                         {
@@ -487,10 +477,10 @@ namespace BattleShipServer
                                                 Program.loggedplayingNicks.Add(enemyNick, Program.loggedNicks[enemyNick]);
                                                 if (Program.enemiesoffers.ContainsKey(enemyNick))
                                                 {
-                                                    //decline offers to enemy
+                                                    
                                                     foreach (var item in Program.enemiesoffers[enemyNick])
                                                     {
-                                                        //Send Fail to Rest
+                                                        
                                                         if (Program.loggedNicks.ContainsKey(item))
                                                         {
                                                             Send(Program.loggedNicks[item], ((char)9).ToString() + " <EOF>");
@@ -502,22 +492,21 @@ namespace BattleShipServer
                                             }
                                             else
                                             {
-                                                //Enemy Give up! You win!
+                                               
                                                 Send(Program.loggedNicks[nick], ((char)17).ToString() + " <EOF>");
                                             }
                                             Program.enemiesoffers[nick].Remove(enemyNick);
-                                            //Program.loggedNicks.Remove(enemyNick);
+                                            
                                         }
                                     }
                                     foreach (var item in Program.enemiesoffers[nick])
                                     {
-                                        //Send Fail to Rest
                                         if (Program.loggedNicks.ContainsKey(item))
                                         {
                                             Send(Program.loggedNicks[item], ((char)9).ToString() + " <EOF>");
                                         }                                     
                                     }
-                                    Program.enemiesoffers[nick].Clear(); //Clear list
+                                    Program.enemiesoffers[nick].Clear(); 
                                 }
                                 
                                 state.buffer = new byte[1024];
@@ -527,37 +516,37 @@ namespace BattleShipServer
                                 break;
                             }
 
-                        case 13: //GetEnemies <nick>
+                        case 13: 
                             {
-                                //Get nick
+                                
                                 nick = parameters[1];
-                                //Check if nick is in dict
+                               
                                 result = Program.loggedNicks.ContainsKey(nick);
-                                if (result == false) //If not in dictionary send Fail Communique to person
+                                if (result == false) 
                                 {                          
                                     Send(handler, ((char)12).ToString() + " <EOF>");
                                 }
                                 else
                                 {
-                                    //Get players from dictionary: only nicks!
+                                    
                                     players = "";
-                                    //"nick_1;ipv4_1:portNo_1 nick_2;ipv4_2:portNo_2 ... nick_n:ipv4_n:portNo_n "
+                                   
                                     foreach (var item in Program.loggedNicks)
                                     {
-                                        //omit person with <nick>
+                                        
                                         if (!item.Key.Equals(nick))
                                             players += item.Key + ";" + item.Value.LocalEndPoint + " ";
                                     }
-                                    if (players == "") //if nobody's online send Fail Communique
+                                    if (players == "") 
                                     {
                                         Send(handler, ((char)12).ToString() + " <EOF>");
                                     }
-                                    else //Send Send Enemies Communique
+                                    else 
                                     {
                                         players += "<EOF>";
                                         players = ((char)12).ToString()+" " + players;
 
-                                        //Send enemies
+                                        
                                         Send(handler, players);
                                     }
                                 }
@@ -568,17 +557,17 @@ namespace BattleShipServer
                                 new AsyncCallback(ReadCallback), state);
                                 break;
                             }
-                        case 14://Close app
+                        case 14:
                             {
                                 whoSent = parameters[1];
-                                //Get nick
+                                
                                 whomSent = parameters[2];
-                                //
+                                
 
-                                //Check if nick is in dict
+                               
                                 if (Program.loggedNicks.ContainsKey(whoSent) ==true)
                                 {
-                                    //Program.whowhomSentGiveUp.Add(whoSent + whomSent);
+                                    
                                     Program.loggedNicks.Remove(whoSent);
                                 }
                                 if (Program.loggedplayingNicks.ContainsKey(whoSent) == true)
@@ -588,10 +577,10 @@ namespace BattleShipServer
 
                                 if (Program.enemiesoffers.ContainsKey(whoSent))
                                 {
-                                    //decline offers to enemy
+                                   
                                     foreach (var item in Program.enemiesoffers[whoSent])
                                     {
-                                        //Send Fail to Rest
+                                        
                                         if (Program.loggedNicks.ContainsKey(item))
                                         {
                                             Send(Program.loggedNicks[item], ((char)9).ToString() + " <EOF>");
@@ -603,7 +592,7 @@ namespace BattleShipServer
                                 handler.Close();
                                 break;
                             }
-                        case 15://GiveUp in MainGame
+                        case 15:
                             {
                                 nick = parameters[1];
                                 enemyNick = parameters[2];
@@ -637,7 +626,7 @@ namespace BattleShipServer
             }
             else
             {
-                // Not all data received. Get more.
+                
                 handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,
                 new AsyncCallback(ReadCallback), state);
             }
@@ -645,10 +634,9 @@ namespace BattleShipServer
 
         private static void Send(Socket handler, String data)
         {
-            // Convert the string data to byte data using ASCII encoding.
+          
             byte[] byteData = Encoding.ASCII.GetBytes(data);
 
-            // Begin sending the data to the remote device.
             handler.BeginSend(byteData, 0, byteData.Length, 0,
                 new AsyncCallback(SendCallback), handler);
         }
@@ -657,10 +645,10 @@ namespace BattleShipServer
         {
             try
             {
-                // Retrieve the socket from the state object.
+                
                 Socket handler = (Socket)ar.AsyncState;
 
-                // Complete sending the data to the remote device.
+                
                 int bytesSent = handler.EndSend(ar);
                 Console.WriteLine("Sent {0} bytes to client.", bytesSent);
 
@@ -668,7 +656,7 @@ namespace BattleShipServer
             }
             catch (Exception e)
             {
-                //Console.WriteLine(e.ToString());
+                Console.WriteLine(e.ToString());
             }
         }
     }

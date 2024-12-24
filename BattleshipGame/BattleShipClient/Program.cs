@@ -16,19 +16,16 @@ namespace BattleShipClient
         public static SearchEnemies enemySelect;
         public static GamePlaying main;
         public static string enemyNick;
-        //public static int dialog; //0 - No, 1 -Yes, 2 - OK, -1 - Cancel;
-        //Thread to receiving messages
+        
         public static volatile bool isThreadRunning = false;
 
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            
             userLogin = "";
             serverAddress = "";
 
@@ -36,18 +33,18 @@ namespace BattleShipClient
             Welcome servConn;
 
             DialogResult dialogResult = DialogResult.No;
-            //dialog = 0;
-            while (dialogResult != DialogResult.Cancel/*dialog != -1*/)
+           
+            while (dialogResult != DialogResult.Cancel)
             {
-                if (dialogResult == DialogResult.No/*dialog==0*/)
+                if (dialogResult == DialogResult.No)
                 {
                     isThreadRunning = false;
                     servConn = new Welcome();
                     dialogResult = servConn.ShowDialog();
                 }
-                if (dialogResult == DialogResult.Yes/*dialog == 1*/) //user is logIn
+                if (dialogResult == DialogResult.Yes) 
                 {
-                    if (isThreadRunning == false) //if you first login
+                    if (isThreadRunning == false)
                     {
                         isThreadRunning = true;
                         new Thread(() =>
@@ -59,7 +56,7 @@ namespace BattleShipClient
                     enemySelect = new SearchEnemies();
                     dialogResult = enemySelect.ShowDialog();
                 }
-                if (dialogResult == DialogResult.OK /*dialog == 2*/) //user want to register
+                if (dialogResult == DialogResult.OK ) 
                 {
                     main = new GamePlaying(enemyNick);
                     dialogResult = main.ShowDialog();
@@ -75,31 +72,30 @@ namespace BattleShipClient
                     var answer = client.Receive();
                     switch (answer[0])
                     {
-                        //EnemySelection
-                        //SendEnemies
+                        
                         case (char)12:
                             {
                                 List<string> onlineEnemyListTmp = new List<string>();
 
-                                //Get Enemies
-                                string[] enemies = enemies = answer.Split(' ');//in enemy[0] is communique, in enemy[n] is EOF
+                                
+                                string[] enemies = enemies = answer.Split(' ');
                                 string[] enemy;
                                 foreach (var item in enemies)
                                 {
                                     enemy = item.Split(';');
                                     if (enemy.Count() > 1)
                                     {
-                                        onlineEnemyListTmp.Add(enemy[0]); //create actual list of online enemies
-                                                                          //if list contains don't add, 
+                                        onlineEnemyListTmp.Add(enemy[0]); 
+                                                                          
                                         if (enemySelect.onlineEnemyList.Contains(enemy[0]))
                                         {
                                             enemySelect.onlineEnemyList.Remove(enemy[0]);
                                         }
-                                        else //if not add, to dgv and remove from onlineEnemyList
+                                        else 
                                         {
                                             DataGridViewRow dgvRow = new DataGridViewRow();
-                                            dgvRow.Cells.Add(new DataGridViewTextBoxCell { Value = enemy[1] });//address ipv4:port
-                                            dgvRow.Cells.Add(new DataGridViewTextBoxCell { Value = enemy[0] });//nick
+                                            dgvRow.Cells.Add(new DataGridViewTextBoxCell { Value = enemy[1] });
+                                            dgvRow.Cells.Add(new DataGridViewTextBoxCell { Value = enemy[0] });
                                             MethodInvoker inv1 = delegate
                                             {
                                                 enemySelect.dgvAvailableEnemies.Rows.Add(dgvRow);
@@ -108,7 +104,7 @@ namespace BattleShipClient
                                         }
                                     }
                                 }
-                                //Remove enemies who are not online
+                                
                                 string enemyVal = "";
                                 for (int i = enemySelect.dgvAvailableEnemies.Rows.Count - 1; i >= 0; i--)
                                 {
@@ -123,64 +119,62 @@ namespace BattleShipClient
 
                                     }
                                 }
-                                //Set onlineEnemyList to actual list of online enemies
+                                
                                 enemySelect.onlineEnemyList = new List<string>(onlineEnemyListTmp);
                                 enemySelect.dgvAvailableEnemies.ClearSelection();
                                 break;
                             }
-                        //GetOffers
+                        
                         case (char)7:
                             {
                                 MethodInvoker inv2 = delegate
                                 {
                                     string message = "";
                                     DialogResult dlg = DialogResult.No;
-                                    //If answer is GetOffers //By this i get also enemies who want to play with me
-                                    if (answer.Split(' ').Count() > 2) //msg value and eof
+                                    
+                                    if (answer.Split(' ').Count() > 2)
                                     {
-                                        //Find out who want to play with you                               
+                                                                     
                                         OfferingGame offeringGame = new OfferingGame(answer);
                                         dlg = offeringGame.ShowDialog();
                                     }
-                                    if (dlg == DialogResult.Yes/*Program.dialog == 1*/)
+                                    if (dlg == DialogResult.Yes)
                                     {
                                         if (enemyNick != "")
                                         {
-                                            //Inform server with who you want to play -> Send Server Agree
-                                            message = (char)12 + " " + userLogin + " " + enemyNick + " <EOF>"; //enemies except me
+                                            
+                                            message = (char)12 + " " + userLogin + " " + enemyNick + " <EOF>"; 
                                             client.Send(message);
                                             enemyNick = enemySelect.enemyNick;
                                             enemySelect.DialogResult = DialogResult.OK;
-                                            //Program.dialog = 2;
+                                            
                                         }
                                     }
                                     else
                                     {
                                         if (answer.Split(' ').Count() > 2)
                                         {
-                                            //Inform server with who you want to play
+                                            
                                             message = (char)12 + " " + userLogin + " " + userLogin + " <EOF>"; //enemies except me
                                             client.Send(message);
                                         }
                                         enemySelect.updateTimer.Enabled = true;
-                                        //if (enemySelect.updateTimer.Enabled == false)
-                                        //{
-                                        //    enemySelect.updateTimer.Enabled = true;
-                                        //}
-                                        //Program.dialog = 1;
+                                        
+                                        
+                                       
                                     }
                                 }; enemySelect.Invoke(inv2);
 
                                 break;
                             }
-                        //OK - Enemy accepted my offer to play
+                        
                         case (char)10:
                             {
                                 enemyNick = enemySelect.enemyNick;
                                 enemySelect.DialogResult = DialogResult.OK;
                                 break;
                             }
-                        //Fail - Enemy declined my offer to play
+                        
                         case (char)9:
                             {
                                 MethodInvoker inv = delegate
@@ -188,16 +182,15 @@ namespace BattleShipClient
                                     enemySelect.agreeButton.Enabled = true;
                                     enemySelect.updateTimer.Enabled = true;
                                 }; enemySelect.Invoke(inv);
-                                //enemySelect.updateTimer.Enabled = true;
+                                
                                 break;
                             }
-                        //Form1
-                        //
-                        case (char)16://Enemy wants to play and it's his turn
+                        
+                        case (char)16:
                             {
                                 MethodInvoker inv = delegate
                                 {
-                                    //Hide button
+                               
                                     main.clickedButton.Visible = false;
                                     main.PrepareBattleField();
                                     Application.DoEvents();
@@ -205,19 +198,19 @@ namespace BattleShipClient
                                 }; main.Invoke(inv);
                                 break;
                             }
-                        //Enemy wants to play and it's my turn
+                        
                         case (char)0:
                             {
                                 MethodInvoker inv = delegate
                                 {
-                                    //Hide button
+                                  
                                     main.clickedButton.Visible = false;
                                     main.PrepareBattleField();
                                     ((Panel)main.Controls.Find("PEnemy", true).FirstOrDefault()).Enabled = true;
                                 }; main.Invoke(inv);
                                 break;
                             }
-                        //Enemy Gave Up in  Form 1
+                        
                         case (char)17:
                             {
                                 MethodInvoker inv = delegate
@@ -230,7 +223,7 @@ namespace BattleShipClient
                                 }; main.Invoke(inv);
                                 break;
                             }
-                        //Miss
+                        
                         case (char)4:
                             {
                                 MethodInvoker inv = delegate
@@ -240,39 +233,39 @@ namespace BattleShipClient
                                 }; main.Invoke(inv);
                                 break;
                             }
-                        //Hit
+                        
                         case (char)5:
                             {
                                 MethodInvoker inv = delegate
                                 {
-                                    int x = Int32.Parse(main.clickedButton.Name.Substring(0, 1)); //get x button co-ordinates
-                                    int y = Int32.Parse(main.clickedButton.Name.Substring(1, 1)); //get y button co-ordinates
+                                    int x = Int32.Parse(main.clickedButton.Name.Substring(0, 1)); 
+                                    int y = Int32.Parse(main.clickedButton.Name.Substring(1, 1)); 
                                     main.enemyMap[x, y] = true;
                                     main.clickedButton.BackColor = Color.Crimson;
                                     ((Panel)main.Controls.Find("PEnemy", true).FirstOrDefault()).Enabled = true;
                                 }; main.Invoke(inv);
                                 break;
                             }
-                        //SinkShip
+                        
                         case (char)3:
                             {
                                 MethodInvoker inv = delegate
                                 {
-                                    int x = Int32.Parse(main.clickedButton.Name.Substring(0, 1)); //get x button co-ordinates
-                                    int y = Int32.Parse(main.clickedButton.Name.Substring(1, 1)); //get y button co-ordinates
+                                    int x = Int32.Parse(main.clickedButton.Name.Substring(0, 1)); 
+                                    int y = Int32.Parse(main.clickedButton.Name.Substring(1, 1)); 
                                     main.enemyMap[x, y] = true;
                                     main.clickedButton.BackColor = Color.Tomato;
                                     ((Panel)main.Controls.Find("PEnemy", true).FirstOrDefault()).Enabled = true;
                                 }; main.Invoke(inv);
                                 break;
                             }
-                        //EndGame
+                        
                         case (char)1:
                             {
                                 MethodInvoker inv = delegate
                                 {
-                                    int x = Int32.Parse(main.clickedButton.Name.Substring(0, 1)); //get x button co-ordinates
-                                    int y = Int32.Parse(main.clickedButton.Name.Substring(1, 1)); //get y button co-ordinates
+                                    int x = Int32.Parse(main.clickedButton.Name.Substring(0, 1)); 
+                                    int y = Int32.Parse(main.clickedButton.Name.Substring(1, 1));
                                     main.enemyMap[x, y] = true;
                                     main.clickedButton.BackColor = Color.Crimson;
                                     ((Panel)main.Controls.Find("PEnemy", true).FirstOrDefault()).Enabled = false;
@@ -282,7 +275,7 @@ namespace BattleShipClient
                                 }; main.Invoke(inv);
                                 break;
                             }
-                        //Shot
+                        
                         case (char)6:
                             {
                                 MethodInvoker inv = delegate

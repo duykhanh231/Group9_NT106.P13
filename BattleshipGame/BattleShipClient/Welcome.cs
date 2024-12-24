@@ -31,29 +31,28 @@ namespace BattleShipClient
             {
                 try
                 {
-                    //Set login
+                    
                     Program.userLogin = txtUsername.Text;
                     Program.client = new SynchronousSocketClient(txtServerIP.Text);
-                    //Send Join communique
+                    
                     char comm = (char)11;                
                     string message = comm+ " " + txtUsername.Text + " <EOF>";
                     Program.client.Send(message);
-                    //Receive answer
+                    
                     var answer = Program.client.Receive()[0];
                     
-                    //If answer is OK
+                    
                     if (answer == (char)10)
                     {
-                        //Program.dialog = 1;
-                        //this.Close();
+                        
                         DialogResult = DialogResult.Yes;
                     }
-                    else//Else if answer is Fail - char(9)
+                    else
                     {
                         MessageBox.Show("Typed nick is occupied", "Error!");
                     }                 
                 }
-                catch (Exception)//Cannot connect to server
+                catch (Exception)
                 {
                     MessageBox.Show("Problem with server connection or address ipv4 is incorrect!", "Error!");
                 }
@@ -74,12 +73,11 @@ namespace BattleShipClient
             this.Close();
         }
 
-        //private void ServerConnectionPanel_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    if (Program.dialog != 1)
-        //    {
-        //        Program.dialog = -1;
-        //    }
-        //}
+        private void Welcome_Load(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

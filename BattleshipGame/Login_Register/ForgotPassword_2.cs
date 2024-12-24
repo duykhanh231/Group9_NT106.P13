@@ -64,7 +64,7 @@ namespace Login_Register
                 DocumentReference docRef = userDoc.Reference;
                 string encryptedPassword = Security.Encrypt(newPassword);
                 await docRef.UpdateAsync("Password", encryptedPassword);
-                
+
 
                 MessageBox.Show("Mật khẩu đã được cập nhật thành công!");
                 /*Hide();
@@ -87,6 +87,9 @@ namespace Login_Register
             Close();
         }
 
-       
+        private void gb_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

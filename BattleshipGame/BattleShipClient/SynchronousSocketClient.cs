@@ -11,23 +11,23 @@ namespace BattleShipClient
 {
     class SynchronousSocketClient
     {
-        //My socket to communique with server
+        
         public Socket socket;
-        //Data buffer for incoming data from server
+        
         byte[] bytes;
-        //Buffer to store the data received from enemies
+        
         private byte[] byteData = new byte[1024];
-        //If I have set ships and click Start Game
+        
         bool iAmReady = false;
-        //If I'am playing game
+        
         bool iamBusy = false; 
         public SynchronousSocketClient(string AddressIP)
         {
             IPEndPoint serverRemoteEP = new IPEndPoint(IPAddress.Parse(AddressIP), 11000);
 
-            // Create a TCP/IP  socket.  
+            
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            // Connect the socket to the remote endpoint. Catch any errors.
+            
             try
             {
                 socket.Connect(serverRemoteEP);
@@ -57,7 +57,7 @@ namespace BattleShipClient
             {
                 while (!answer.Contains("<EOF>"))
                 {
-                    // Receive the response from the remote device.
+                    
                     bytesRec = socket.Receive(bytes);
                     answer += Encoding.ASCII.GetString(bytes, 0, bytesRec);
                 }
@@ -83,10 +83,10 @@ namespace BattleShipClient
         {
             try
             {
-                // Encode the data string into a byte array.
+                
                 byte[] msg = Encoding.ASCII.GetBytes(data);
 
-                // Send the data through the socket.
+                
                 int bytesSent = socket.Send(msg);
             }
             catch (ArgumentNullException ane)
@@ -110,7 +110,7 @@ namespace BattleShipClient
         {
             try
             {
-                // Release the socket.
+                
                 socket.Shutdown(SocketShutdown.Both);
                 socket.Close();
             }
@@ -130,6 +130,6 @@ namespace BattleShipClient
                 throw;
             }
         }
-        //Messages to send
+    
     }
 }

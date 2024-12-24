@@ -63,6 +63,7 @@ namespace Login_Register
             gb.Size = new Size(806, 547);
             gb.TabIndex = 17;
             gb.TabStop = false;
+            gb.Enter += gb_Enter;
             // 
             // lklbQuayLai
             // 
@@ -386,9 +387,9 @@ namespace Login_Register
             }
         }
 
+        private void gb_Enter(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 }

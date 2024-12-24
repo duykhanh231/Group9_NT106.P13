@@ -57,6 +57,7 @@
             gb.Size = new Size(801, 529);
             gb.TabIndex = 19;
             gb.TabStop = false;
+            gb.Enter += gb_Enter;
             // 
             // lklbQuayLai
             // 

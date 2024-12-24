@@ -28,7 +28,7 @@ namespace BattleShipClient
             }
             else
             {
-                //Get recipient ID from Combobox
+                
                 Program.enemySelect.enemyNick = cboEnemyNick.SelectedValue.ToString();
                 Program.enemyNick = cboEnemyNick.SelectedValue.ToString();
                 DialogResult = DialogResult.Yes;
@@ -43,8 +43,8 @@ namespace BattleShipClient
         private void OfferingGame_Load(object sender, EventArgs e)
         {
             List<string> eNicks = enemiesNicks.Split(' ').ToList();
-            eNicks.RemoveAt(eNicks.Count()-1); //EOF
-            eNicks.RemoveAt(0);//communique value
+            eNicks.RemoveAt(eNicks.Count()-1); 
+            eNicks.RemoveAt(0);
 
             cboEnemyNick.DataSource = eNicks;
             cboEnemyNick.AutoCompleteMode = AutoCompleteMode.Append;

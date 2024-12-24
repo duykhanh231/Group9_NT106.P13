@@ -17,7 +17,7 @@ namespace BattleShipClient
         public bool normalEnd = false;
         public Button clickedButton;
 
-        //mast not sunk
+        
         public int masts = 20;
         public GamePlaying(string enemyNick)
         {
@@ -51,17 +51,17 @@ namespace BattleShipClient
             {
                 for (int j = 0; j < 11; j++)
                 {
-                    if (i == 0 && j == 0) continue; //don't create left top corner
+                    if (i == 0 && j == 0) continue; 
                     Button button = new Button();
                     buttonPanel.Controls.Add(button);
                     button.Location = new System.Drawing.Point(j* xButtonSize, i * yButtonSize);
                     button.Size = new Size(xButtonSize, yButtonSize);
                     button.ForeColor = System.Drawing.Color.Black;
-                    //this.Controls.Add(button);
-                    if (i>0 && j>0) //double digits: 00, 01, ..., 99
+                    
+                    if (i>0 && j>0) 
                     {
                         button.Name = (i - 1).ToString() + (j - 1).ToString();
-                        //button.Text = (i - 1).ToString() + (j - 1).ToString();
+                        
                         button.Font = new Font(button.Font.FontFamily, 6);
                         if (name == "PYou")
                         {
@@ -75,13 +75,13 @@ namespace BattleShipClient
                     else
                     {
                         button.Enabled = false;
-                        if (i == 0 && j > 0) //letters: A, B, ..., J
+                        if (i == 0 && j > 0) 
                         {
                             button.Text = ((char)(64 + j)).ToString();
                             button.Name= ((char)(64 + j)).ToString();
                             button.Font = new Font(button.Font.FontFamily, 6);
                         }
-                        else if (i!=0 || j!=0) // digits: 1, 2, ..., 10
+                        else if (i!=0 || j!=0) 
                         {
                             button.Text = i.ToString();
                             button.Name= "L" + i.ToString();
@@ -127,16 +127,16 @@ namespace BattleShipClient
             int y1=y-1;
             if (y1>-1)
             {
-                if (yourMap[x1,y1]==true) //check if neighbor has neighbor
+                if (yourMap[x1,y1]==true) 
                 {
                     return 1 + IsLeftNeighbor(x1, y1);
                 }
-                else //no neigbor
+                else 
                 {
                     return 0;
                 }
             }
-            else //no neighbor
+            else 
             {
                 return 0;
             }
@@ -147,16 +147,16 @@ namespace BattleShipClient
             int y1 = y + 1;
             if (y1 < 10)
             {
-                if (yourMap[x1, y1] == true) //check if neighbor has neighbor
+                if (yourMap[x1, y1] == true) 
                 {
                     return 1 + IsRightNeighbor(x1, y1);
                 }
-                else //no neigbor
+                else 
                 {
                     return 0;
                 }
             }
-            else //no neighbor
+            else 
             {
                 return 0;
             }
@@ -167,16 +167,16 @@ namespace BattleShipClient
             int y1 = y;
             if (x1 > -1)
             {
-                if (yourMap[x1, y1] == true) //check if neighbor has neighbor
+                if (yourMap[x1, y1] == true) 
                 {
                     return 1 + IsUpNeighbor(x1, y1);
                 }
-                else //no neigbor
+                else 
                 {
                     return 0;
                 }
             }
-            else //no neighbor
+            else 
             {
                 return 0;
             }
@@ -187,16 +187,16 @@ namespace BattleShipClient
             int y1 = y;
             if (x1 < 10)
             {
-                if (yourMap[x1, y1] == true) //check if neighbor has neighbor
+                if (yourMap[x1, y1] == true) 
                 {
                     return 1 + IsDownNeighbor(x1, y1);
                 }
-                else //no neigbor
+                else 
                 {
                     return 0;
                 }
             }
-            else //no neighbor
+            else 
             {
                 return 0;
             }
@@ -367,7 +367,7 @@ namespace BattleShipClient
         }       
         public void PrepareBattleField()
         {         
-            //Hide panel for setting masts
+            
             PMastSet.Visible = false;
             Panel matched = (Panel)this.Controls.Find("PYou", true).FirstOrDefault();
             matched.Visible = false;
@@ -377,16 +377,16 @@ namespace BattleShipClient
                 matched.Location = new Point(matched.Location.X - 164, matched.Location.Y);
             }
             matched.Visible = true;
-            //for enemy
+           
             GenerateMap("PEnemy", 360, 190);
-            //Make visible mast tip panel
+            
             PMast.Visible = true;
             Array.Clear(yourMapTmp, 0, yourMapTmp.Length);
         }
         void playbuttonClick(object sender, EventArgs e)
         {
             clickedButton = (Button)sender;
-            //check masts
+            
             bool checkResult = false;
             Array.Clear(yourMapTmp, 0, yourMapTmp.Length);
             checkResult=Check1Masts();
@@ -414,12 +414,12 @@ namespace BattleShipClient
                 return;
             }
 
-            //Send StartGame communique
+            
             char comm = (char)0;
             string message = comm + " " + Program.userLogin + " " + Program.enemyNick + " <EOF>";
             Program.client.Send(message);
             enemyGiveUpBeforeStart = true;
-            //Receive answer in Program's thread
+            
             clickedButton.Enabled = false;
         }
         public void GetShotAndResponse(int x, int y)
@@ -428,18 +428,15 @@ namespace BattleShipClient
             Panel panel = (Panel)this.Controls.Find("PYou", true).FirstOrDefault();
             button = (Button)panel.Controls.Find(x.ToString() + y.ToString(), true).FirstOrDefault();
             string message = "";           
-            //Ship is hit
+            
             if (yourMap[x,y] == true)
             {
                 yourMapTmp[x, y] = true;
 
-                //else
+                
                 masts--;
 
-                //If ship to sink
-                //Send SinkShip
-                //yourMapTmp[x, y] = true;            
-                //Change color on your map
+                
                 button.BackColor = Color.Tomato;
                 Application.DoEvents();
                 if (masts == 0)
@@ -449,76 +446,76 @@ namespace BattleShipClient
                 }
                 else
                 {
-                    //Send Hit
+                    
                     message = (char)5 + " " + enemyNick + " <EOF>";
                     Program.client.Send(message);
-                    //Your turn
+                    
                     ((Panel)this.Controls.Find("PEnemy", true).FirstOrDefault()).Enabled = false;
                 }  
             }
-            else//Send Miss
+            else
             {
                 message = (char)4 + " " + enemyNick + " <EOF>";
                 Program.client.Send(message);
                 button.BackColor = Color.Silver;
-                //Your turn
+                
                 ((Panel)this.Controls.Find("PEnemy", true).FirstOrDefault()).Enabled = true;
             }
             Application.DoEvents();
         }
         void setMastbuttonClick(object sender, EventArgs e)
         {
-            var clickedButton = (Button)sender;//detect which button has been pressed
-            int x = Int32.Parse(clickedButton.Name.Substring(0, 1)); //get x button co-ordinates
-            int y = Int32.Parse(clickedButton.Name.Substring(1, 1)); //get y button co-ordinates
+            var clickedButton = (Button)sender;
+            int x = Int32.Parse(clickedButton.Name.Substring(0, 1)); 
+            int y = Int32.Parse(clickedButton.Name.Substring(1, 1)); 
             int leftNo = IsLeftNeighbor(x, y);
             int rightNo = IsRightNeighbor(x, y);
             int upNo = IsUpNeighbor(x, y);
             int downNo = IsDownNeighbor(x, y);
 
-            //Select or not
-            if (clickedButton.BackColor != Color.MediumBlue) //if button wasn't selected
+            
+            if (clickedButton.BackColor != Color.MediumBlue) 
             {
-                //check left neigbors
+                
                 if ((leftNo + rightNo < 4) && (upNo + downNo < 4))
                 {
                     clickedButton.BackColor = Color.MediumBlue;
-                    //add to dictionary
+                    
                     selectedButtons.Add(clickedButton);
-                    //disable corners
+                    
                     DisableOrEnableAllCorners((Panel)clickedButton.Parent, x, y, false);
-                    //set true in game table
+                    
                     yourMap[x, y] = true;
                 }
             }
             else
             {
                 clickedButton.BackColor = Color.Transparent;
-                //enable corners
+                
                 DisableOrEnableAllCorners((Panel)clickedButton.Parent, x, y, true);
-                //remove from dictionary
+                
                 selectedButtons.Remove(clickedButton);
-                //disable corners for buttons in dictionary
+                
                 foreach (Button btn in selectedButtons)
                 {
                     DisableOrEnableAllCorners((Panel)btn.Parent, Int32.Parse(btn.Name[0].ToString()), Int32.Parse(btn.Name[1].ToString()), false);
                 }
-                //set false in game table
+                
                 yourMap[x, y] = false;
             }
-            //Check
+          
         }
         void buttonClick(object sender, EventArgs e)
         {
-            clickedButton = (Button)sender;//detect which button has been pressed
+            clickedButton = (Button)sender;
             clickedButton.Enabled = false;
-            int x = Int32.Parse(clickedButton.Name.Substring(0, 1)); //get x button co-ordinates
-            int y = Int32.Parse(clickedButton.Name.Substring(1, 1)); //get y button co-ordinates
-            //Send Shot
+            int x = Int32.Parse(clickedButton.Name.Substring(0, 1)); 
+            int y = Int32.Parse(clickedButton.Name.Substring(1, 1));
+            
             string message = "";
             message = (char)6 + " " + enemyNick + " " + x.ToString() +" " + y.ToString() + " <EOF>";
             Program.client.Send(message);
-            //Get answer form Program's thread       
+              
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -530,9 +527,9 @@ namespace BattleShipClient
         {
             if (enemyGiveUpBeforeStart == false)
             {
-                //User must send GiveUp Communique
+                
                 char comm = (char)2;
-                //<Who gives up> <with whom he plays>
+                
                 string message = comm + " " + Program.userLogin + " " + Program.enemyNick + " <EOF>";
                 Program.client.Send(message);
 
@@ -540,11 +537,11 @@ namespace BattleShipClient
             else if (normalEnd == false)
             {
                 char comm = (char)15;
-                //<Who gives up> <with whom he plays>
+                
                 string message = comm + " " + Program.userLogin + " " + Program.enemyNick + " <EOF>";
                 Program.client.Send(message);
             }
-            //User Go to EnemySelectionPanel
+            
             DialogResult = DialogResult.Yes;
         }
     }
