@@ -73,9 +73,9 @@
             serverIP.Location = new Point(79, 291);
             serverIP.Margin = new Padding(5, 0, 5, 0);
             serverIP.Name = "serverIP";
-            serverIP.Size = new Size(284, 74);
+            serverIP.Size = new Size(308, 74);
             serverIP.TabIndex = 2;
-            serverIP.Text = "Password:";
+            serverIP.Text = "Server IP:";
             // 
             // tb_serverIP
             // 
