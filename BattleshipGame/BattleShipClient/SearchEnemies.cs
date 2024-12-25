@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
 using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace BattleShipClient
 {
@@ -19,6 +20,16 @@ namespace BattleShipClient
         string enemyAddressIPAndPort = "";
         public Button agreeButton;
         public List<string> onlineEnemyList = new List<string>();
+        // Import the user32.dll to send messages to the OS
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        // Constants for Windows Messages
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HTCAPTION = 0x2;
         public SearchEnemies()
         {         
             InitializeComponent();
@@ -113,6 +124,17 @@ namespace BattleShipClient
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Release mouse capture
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0); // Simulate the drag
+            }
         }
     }
 }

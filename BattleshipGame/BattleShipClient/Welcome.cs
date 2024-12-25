@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +13,16 @@ namespace BattleShipClient
 {
     public partial class Welcome : Form
     {
+        // Import the user32.dll to send messages to the OS
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        // Constants for Windows Messages
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HTCAPTION = 0x2;
         public Welcome()
         {
             InitializeComponent();
@@ -78,6 +89,16 @@ namespace BattleShipClient
 
         }
 
-       
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Release mouse capture
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0); // Simulate the drag
+            }
+        }
+
     }
 }

@@ -474,12 +474,12 @@ namespace BattleShipClient
             int downNo = IsDownNeighbor(x, y);
 
             
-            if (clickedButton.BackColor != Color.MediumBlue) 
+            if (clickedButton.BackColor != Color.SteelBlue) 
             {
                 
                 if ((leftNo + rightNo < 4) && (upNo + downNo < 4))
                 {
-                    clickedButton.BackColor = Color.MediumBlue;
+                    clickedButton.BackColor = Color.SteelBlue;
                     
                     selectedButtons.Add(clickedButton);
                     
